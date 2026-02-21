@@ -7,7 +7,9 @@
 </head>
 <body>
     <!-- Making form -->
-    <form>
+     <!-- get method send the filled data in the form through the url and at the backend side we fetch the data from the url so this is unsecure because anyone can see the sensitive data -->
+      <!-- post method is secure one which does not show the data in url and fetch from the req.body at the  backend side -->
+    <form method="get" target="_blank">
         <!-- fieldset make a boundary outside the form and form is displayed inside it for better look -->
          <!-- legend is used to show what type of form it is -->
         <fieldset>
@@ -26,19 +28,24 @@
 
 
             <!-- same name in radio denotes only one gender should be selected by user -->
+            <!-- For text input → value is what the user types -->
+            <!-- For radio button → value is what you set in HTML -->
+            <!-- For checkbox → value is what you set in HTML -->
+             <!-- value in radio denotes only one option is send to the server side -->
             <label for="gender">Select your gender :-</label><br>
             <label for="male">Male</label>
-            <input type="radio" id="male" name="usergender">
+            <input type="radio" id="male" name="usergender" value="male">
             <label for="female">Female</label>
-            <input type="radio" id="female" name="usergender"><br>
+            <input type="radio" id="female" name="usergender" value="female"><br>
 
             <label>Choose food items:-</label><br>
             <label for="pizza">pizza</label>
-            <input type="checkbox" name="pizza" id="pizza">
+            <!-- food array shows all the checkbox items sent at the server side -->
+            <input type="checkbox" name="food[]" id="pizza" value="pizza">
             <label for="burger">burger</label>
-            <input type="checkbox" name="burger" id="burger">
+            <input type="checkbox" name="food[]" id="burger" value="burger">
             <label for="biryani">biryani</label>
-            <input type="checkbox" name="biryani" id="biryani">
+            <input type="checkbox" name="food[]" id="biryani" value="biryani">
 
             <!-- value attribute is used to give the initial value in the input box -->
             <input type="submit" value="Submit Form">
