@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Small Project_TimeTable</title>
+</head>
+<body>
+    <table border cellspacing="2px" cellpadding="10px">
+        <!-- writing the first row of table in thead semantic tag is best practice -->
+        <thead>
+            <tr>
+                <th colspan="9">Time Table</th>
+            </tr>
+            <tr>
+                <th>Day/Lec</th>
+                <th>I <br>09:00 - 09:30</th>
+                <th>II <br>09:30 - 10:00</th>
+                <th>III <br>10:00 - 10:30</th>
+                <th>Lunch</th>
+                <th>IV <br>11:00 - 11:30</th>
+                <th>V <br>11:30 - 12:00</th>
+                <th>VI <br>12:00 - 12:30</th>
+                <th>VII <br>12:30 - 01:00</th>
+            </tr>
+        </thead>
+        <!-- writing the all rows except the heading row of table in tbody semantic tag is best practice -->
+        <tbody>
+            <tr>
+                <td>Monday</td>
+                <td>Mathematics</td>
+                <td>Physics</td>
+                <td>Data Structures</td>
+                <td rowspan="5">Lunch</td>
+                <td>Computer Networks</td>
+                <td>Operating Systems</td>
+                <td>English</td>
+                <td>Lab</td>
+            </tr>
+            <tr>
+                <td>Tuesday</td>
+                <td>DBMS</td>
+                <td>Mathematics</td>
+                <td>Java Programming</td>
+                <td>Software Engineering</td>
+                <td>Physics</td>
+                <td>Data Structures</td>
+                <td>Sports</td>
+            </tr>
+            <tr>
+                <td>Wednesday</td>
+                <td>Operating Systems</td>
+                <td>Computer Networks</td>
+                <td>DBMS</td>
+                <td>Java Programming</td>
+                <td>Mathematics</td>
+                <td>English</td>
+                <td>Lab</td>
+            </tr>
+            <tr>
+                <td>Thursday</td>
+                <td>Software Engineering</td>
+                <td>Physics</td>
+                <td>Data Structures</td>
+                <td>DBMS</td>
+                <td>Operating Systems</td>
+                <td>Computer Networks</td>
+                <td>Seminar</td>
+            </tr>
+            <tr>
+                <td>Friday</td>
+                <td>Java Programming</td>
+                <td>Mathematics</td>
+                <td>English</td>
+                <td>Physics</td>
+                <td>Software Engineering</td>
+                <td>DBMS</td>
+                <td>Lab</td>
+            </tr>
+            <tr>
+                <td>Saturday</td>
+                <td>Workshop</td>
+                <td>Sports</td>
+                <td>Seminar</td>
+                <td colspan="5">No Classes</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
