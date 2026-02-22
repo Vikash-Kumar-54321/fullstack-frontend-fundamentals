@@ -1,0 +1,64 @@
+/* Universal selector */
+*{
+    background-color: #808080;
+}
+
+/* element selector */
+/* it will be apply to all h1 tags */
+h1{
+    font-size: larger;
+    color: white;
+    margin: 10px;
+}
+/* it can be used as attributes among various element */
+.class{
+    margin-top: 5px;
+    color: white;
+    background-color: black;
+}
+
+/* id is for one element and not prefer to use same with multuple element attributes */
+#id{
+    margin-top: 10px;
+    color: #b41313;
+    background-color: aquamarine;
+}
+
+/* selector list :- it is used to set the property to multiple selectors at a same time but same property will be applied to all*/
+.class, #id, h1{
+    text-decoration:underline;
+    text-decoration-color: blue;
+}
+
+/* descendent selector:- it will be applied on the child element or the one who is inside it anywhere */
+article p{
+    color: greenyellow;
+}
+/* child selector:- it will be applied on only the direct child of it one level down */
+/* all child selectors are descendant selector but vice versa is not true */
+article > h1{
+    color: aquamarine;
+}
+
+/* adjacent sibling selector :- it is used to set property only to the first followed siblings of it */
+
+article + header{
+    font-size: xx-large;
+    font-weight: 800;
+    font-style: italic;
+}
+/* generral sibling selector :- it is used to set property to all followed siblings of it*/
+article ~ header{
+    font-size: xx-large;
+    font-weight: 800;
+    font-style: italic;
+}
+
+/* attribute selector:- set on the specific attribute of any element */
+[target="_blank"]{
+    text-decoration: none;
+}
+/* with ~ implies to the specific attribute only  */
+[alt~="demo"]{
+    background-color: #b41313;
+}

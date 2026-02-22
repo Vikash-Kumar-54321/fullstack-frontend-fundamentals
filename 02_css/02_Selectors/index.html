@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectors and its various type</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- element selector -->
+    <h1>Element Selector</h1>
+<hr>
+    <main>
+        <p class="class">This is class selector</p>
+    </main>
+    <hr>
+    <section>
+        <h1 id="id">This is id selector</h1>
+    </section>
+    <hr>
+<article>
+    <!-- NOT a direct child (it's inside <header>) -->
+    <header><p>I am ONLY a descendant (NOT a direct child)</p></header>
+
+    <!-- h1 is inside header → NOT a direct child -->
+    <header>
+        <h1>I am NOT a direct child (I am a grandchild)</h1>
+    </header>
+
+    <!-- direct child of article -->
+    <h1>I am a DIRECT CHILD of article</h1>
+</article>
+<hr>
+<header>I am first followed adjacent sibling of article</header>
+<header>
+    <h1>I am not the direcct followed adjacent sibling of article</h1>
+</header>
+<footer>
+    <!-- attribute selector -->
+    <a href="www.google.com" target="_blank">Google</a>
+    <!-- attribute selector woth ~ symbol -->  
+    <img src="demo.png" alt="demo">
+</footer>
+</body>
+</html>
