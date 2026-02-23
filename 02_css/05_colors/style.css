@@ -1,0 +1,78 @@
+/* ============================= */
+/* TEXT COLOR PROPERTY */
+/* ============================= */
+
+/*
+color property is used to change text color.
+
+There are different ways to define colors:
+
+1. Named colors (red, blue, green)
+2. HEX codes (#ffffff)
+3. RGB values
+
+Named colors are NOT preferred because:
+- Different browsers may render them slightly differently
+- Limited color options
+
+HEX codes are preferred because:
+- Fixed value
+- Exact color
+- Professional usage
+*/
+
+/* Using HEX color (recommended) */
+.hex-example {
+    color: #1e90ff;   /* exact blue shade */
+}
+
+/* Using Named color (not preferred in professional work) */
+.named-example {
+    color: red;
+}
+
+
+/* ============================= */
+/* BACKGROUND PROPERTIES */
+/* ============================= */
+
+/*
+background-color → sets background color
+background-image → adds image
+background-size → controls image size
+background-attachment → controls scroll behavior
+*/
+
+body {
+    background-color: #1a1a1a; /* dark background using HEX */
+    color: #ffffff;
+}
+
+/* Box with background image */
+.background-box {
+
+    background-color: #2c2c2c;  /* fallback color */
+
+    background-image: url("https://images.pexels.com/photos/943096/pexels-photo-943096.jpeg");
+
+    background-repeat: no-repeat;
+
+    /*
+    background-size values:
+    cover → fills entire area (most preferred)
+    contain → fits inside without cropping
+    */
+    background-size: cover;
+
+    /*
+    background-attachment values:
+    scroll → default, moves with page (most used)
+    fixed → stays fixed when scrolling
+    local → moves with element content
+    */
+
+    background-attachment: scroll;
+
+    padding: 40px;
+    margin-top: 20px;
+}
