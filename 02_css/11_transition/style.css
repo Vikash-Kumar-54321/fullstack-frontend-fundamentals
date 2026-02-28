@@ -1,0 +1,69 @@
+body{
+    background-color: #2c2c2c;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.box{
+    width: 200px;
+    height: 100px;
+    margin: 30px auto;
+    background-color: teal;
+    line-height: 100px;
+    transition-property: background-color;
+    transition-duration: 0.5s;
+}
+
+/*
+transition-property
+→ defines which property should animate
+example: color, background-color, width
+*/
+
+.basic:hover{
+    background-color: orange;
+}
+
+
+/* transition-delay */
+/* delay before animation starts */
+
+.delay{
+    transition-duration: 0.5s;
+    transition-delay: 0.5s;
+}
+
+.delay:hover{
+    background-color: purple;
+}
+
+
+/* transition-timing-function */
+/*
+controls speed style of animation
+
+options:
+ease (default) → starts slow, becomes fast in middle, ends slow.
+linear → same speed from start to end (constant speed).
+ease-in → starts slow, then becomes fast at the end.
+ease-out → starts fast, then slows down at the end.
+ease-in-out → slow at start, fast in middle, slow at end (very smooth).
+*/
+
+.timing{
+    transition: background-color 0.5s ease-in-out;
+}
+
+.timing:hover{
+    background-color: red;
+}
+
+
+/*
+transition shorthand:
+transition: property duration timing-function delay;
+
+example:
+transition: all 0.5s ease 0.2s;
+*/
