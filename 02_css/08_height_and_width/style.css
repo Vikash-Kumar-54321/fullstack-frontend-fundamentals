@@ -1,0 +1,67 @@
+body{
+    background-color: #2c2c2c;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.box{
+    margin: 20px;
+    padding: 20px;
+    background-color: teal;
+}
+
+/* width & height */
+
+.fixed{
+    width: 300px;
+    height: 100px;
+}
+
+/*
+width → fixed horizontal size
+height → fixed vertical size
+px gives fixed size
+*/
+
+
+/* percentage width */
+
+.percentage{
+    width: 50%;
+    height: 80px;
+    background-color: purple;
+}
+
+/*
+50% width depends on parent element
+responsive compared to px
+*/
+
+
+/* min-width & min-height */
+
+.min{
+    min-width: 250px;
+    min-height: 80px;
+    background-color: orange;
+}
+
+/*
+min-width → cannot shrink below this
+min-height → minimum vertical size
+*/
+
+
+/* max-width & max-height */
+
+.max{
+    max-width: 400px;
+    max-height: 120px;
+    background-color: green;
+}
+
+/*
+max-width → cannot grow beyond this
+max-height → limits vertical growth
+very useful in responsive design
+*/

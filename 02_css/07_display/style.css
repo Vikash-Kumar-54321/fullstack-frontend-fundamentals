@@ -1,0 +1,89 @@
+body{
+    background-color: #2c2c2c;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* display: inline */
+
+/*
+inline:
+- does not start on new line
+- takes only required width
+- width & height do NOT work
+*/
+
+.inline-box{
+    display: inline;
+    background-color: orange;
+    padding: 10px;
+    margin: 5px;
+}
+
+
+/* display: block */
+
+/*
+block:
+- starts on new line
+- takes full width
+- width & height work
+*/
+
+.block-box{
+    display: block;
+    background-color: teal;
+    width: 200px;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+
+/* display: inline-block */
+
+/*
+inline-block:
+- stays in same line
+- width & height work
+- most useful in layouts
+*/
+
+.inlineblock-box{
+    display: inline-block;
+    background-color: purple;
+    width: 120px;
+    height: 50px;
+    margin: 5px;
+    text-align: center;
+    line-height: 50px;
+}
+
+
+/* display: none */
+
+/*
+display: none;
+- element is completely removed
+- no space is taken
+*/
+
+.none-box{
+    display: none;
+    background-color: red;
+    padding: 10px;
+}
+
+
+/* visibility: hidden */
+
+/*
+visibility: hidden;
+- element is hidden
+- but space is still reserved
+*/
+
+.hidden-box{
+    visibility: hidden;
+    background-color: green;
+    padding: 10px;
+}

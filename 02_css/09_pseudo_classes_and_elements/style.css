@@ -1,0 +1,77 @@
+body{
+    font-family: Arial, sans-serif;
+    background-color: #2c2c2c;
+    color: white;
+}
+
+/* hover */
+/* hover works when mouse is over element */
+button:hover{
+    background-color: teal;
+    color: white;
+}
+
+/* focus */
+/* focus works when input is clicked */
+input:focus{
+    border: 2px solid orange;
+    outline: none;
+}
+
+/* link */
+/* default state of link */
+a:link{
+    color: lightblue;
+}
+
+/* visited */
+/* after link is clicked */
+a:visited{
+    color: purple;
+}
+
+/* active */
+/* when link is being clicked */
+a:active{
+    color: red;
+}
+
+/* nth-child */
+/* selects specific child element */
+li:nth-child(2){
+    color: yellow;
+}
+
+/* selection */
+/* styles selected text */
+::selection{
+    background-color: yellow;
+    color: black;
+}
+
+/* first-line */
+/* styles first line of paragraph */
+.paragraph::first-line{
+    color: orange;
+}
+
+/* first-letter */
+/* styles first letter of paragraph */
+.paragraph::first-letter{
+    font-size: 30px;
+    color: red;
+}
+
+/* before */
+/* adds content before element */
+.box::before{
+    content: "Before - ";
+    color: lightgreen;
+}
+
+/* after */
+/* adds content after element */
+.box::after{
+    content: " - After";
+    color: lightgreen;
+}
