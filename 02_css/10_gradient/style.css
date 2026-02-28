@@ -1,0 +1,57 @@
+body{
+    font-family: Arial, sans-serif;
+    background-color: #2c2c2c;
+    color: white;
+    text-align: center;
+}
+
+.box{
+    width: 300px;
+    height: 120px;
+    margin: 20px auto;
+    line-height: 120px;
+    font-weight: bold;
+    color: white;
+}
+
+/* linear-gradient */
+/* default direction: top to bottom */
+.linear{
+    background: linear-gradient(red, blue);
+}
+
+/* linear-gradient with degree */
+/* 45deg means diagonal direction */
+.linear-degree{
+    background: linear-gradient(45deg, orange, purple);
+}
+
+/* radial-gradient default */
+/* default shape is ellipse */
+.radial-default{
+    background: radial-gradient(red, yellow);
+}
+
+/* radial-gradient circle */
+/* circle makes perfect round gradient */
+.radial-circle{
+    background: radial-gradient(circle, blue, green);
+}
+
+/* repeating radial gradient */
+/* repeats color pattern */
+.repeating-radial{
+    background: repeating-radial-gradient(circle, red 0px, yellow 20px);
+}
+
+/* conic-gradient */
+/* rotates colors around center */
+.conic{
+    background: conic-gradient(red, yellow, green, blue);
+}
+
+/* conic-gradient with degree */
+/* starts gradient from specific angle */
+.conic-degree{
+    background: conic-gradient(from 90deg, red, yellow, green);
+}
