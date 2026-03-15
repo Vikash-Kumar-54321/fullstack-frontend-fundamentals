@@ -1,0 +1,146 @@
+body{
+    font-family: Arial, sans-serif;
+    background-color: #2c2c2c;
+    color: white;
+    text-align: center;
+}
+
+/* basic styling */
+
+.box{
+    width: 400px;
+    height: 150px;
+    margin: 30px auto;
+    background-color: teal;
+    line-height: 150px;
+}
+
+
+
+/* MEDIA QUERY */
+
+/*
+Media Query is used to apply CSS based on screen size or also called viewport.
+
+It helps create responsive websites.
+
+Responsive means:
+The layout adjusts automatically for
+mobile, tablet, and desktop screens.
+
+Without media queries,
+a website may look good on desktop
+but break on mobile screens.
+
+Media queries check the viewport size
+and apply CSS accordingly.
+
+Viewport = visible screen area of the browser.
+
+Common breakpoints:
+
+mobile → up to 600px
+tablet → 601px to 900px
+desktop → above 900px
+*/
+
+
+
+/* MAX-WIDTH METHOD */
+
+/*
+max-width means:
+
+Apply this CSS
+when screen width is LESS THAN or EQUAL to the value.
+
+Used mainly for mobile-first adjustments.
+
+Example below:
+
+If screen width ≤ 600px
+the box becomes smaller.
+*/
+
+@media (max-width: 600px){
+
+    .box{
+        width: 200px;
+        background-color: purple;
+    }
+
+}
+
+
+
+/* MIN-WIDTH METHOD */
+
+/*
+min-width means:
+
+Apply CSS when screen width
+is GREATER THAN OR EQUAL to the value.
+
+Used when designing layouts
+that expand for larger screens.
+
+Example below:
+
+If screen width ≥ 900px
+box becomes larger.
+*/
+
+@media (min-width: 900px) {
+
+    .box{
+        width: 500px;
+        background-color: orange;
+    }
+
+}
+
+
+
+/* RANGE MEDIA QUERY (INEQUALITY METHOD) */
+
+/*
+Modern CSS also allows range queries
+using inequality operators.
+
+Example:
+
+(width >= 600px) and (width <= 900px)
+here we can also write (min-width:600px) and (max-width:900)
+This means:
+
+Apply CSS when screen width
+is between 600px and 900px.
+
+This is commonly used for tablets.
+*/
+
+@media (600px <= width <= 900px){
+
+    .box{
+        width: 350px;
+        background-color: green;
+    }
+
+}
+
+
+
+/* IMPORTANT POINTS */
+
+/*
+max-width → used when styling smaller screens
+
+min-width → used when expanding layout for larger screens
+
+range query → used when targeting specific screen ranges
+
+Mobile-first design usually starts with:
+
+small screen styles first
+then uses min-width queries for larger screens.
+*/
