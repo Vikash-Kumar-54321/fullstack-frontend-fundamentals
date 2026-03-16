@@ -1,0 +1,192 @@
+/* BASIC RESET */
+/* Remove default browser spacing */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* Root font size */
+html{
+    font-size:16px;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    padding:20px;
+}
+
+
+/* PX (PIXEL UNIT) */
+/* px is a FIXED unit */
+/* It does NOT depend on screen size or parent size */
+/* Used when we want exact control */
+/* Example: borders, icons, small components */
+
+.px{
+    width:200px;        /* always 200 pixels */
+    height:100px;
+    background:red;
+    margin:20px 0;
+}
+
+
+/* PERCENTAGE (%) */
+/* % is relative to the PARENT element */
+/* If parent width = 500px */
+/* 50% width = 250px */
+
+.parent{
+    width:500px;
+    background:lightgray;
+}
+
+.percent{
+    width:50%;         /* half of parent width */
+    height:80px;
+    background:green;
+}
+
+
+/* EM UNIT */
+/* em depends on the FONT SIZE of the parent */
+/* 1em = parent font size */
+/* 2em = 2 × parent font size */
+
+.em-parent{
+    font-size:20px;
+}
+
+.em-text{
+    font-size:2em;     /* 2 × 20px = 40px */
+}
+
+
+
+/* REM UNIT */
+/* rem depends on ROOT font size (html element) */
+/* It does NOT depend on parent */
+/* Very useful for consistent typography */
+
+.rem-text{
+    font-size:2rem;    /* 2 × root font size (16px) = 32px */
+    margin-top:20px;
+}
+
+
+
+/* VIEWPORT UNITS */
+/* These depend on the size of the browser window */
+
+.viewport-box{
+    width:50vw;       /* vw = viewport width */
+                       /* 50vw = 50% of screen width */
+
+    height:20vh;      /* vh = viewport height */
+                       /* 20vh = 20% of screen height */
+
+    background:orange;
+    margin-top:20px;
+}
+
+
+
+/* VMIN */
+/* vmin uses the SMALLER value between viewport width
+   and viewport height */
+/* Good for responsive squares */
+
+.vmin-box{
+    width:20vmin;
+    height:20vmin;
+    background:purple;
+    margin-top:20px;
+}
+
+
+/* VMAX */
+/* vmax uses the LARGER value between viewport width
+   and viewport height */
+
+.vmax-box{
+    width:20vmax;
+    height:20vmax;
+    background:teal;
+    margin-top:20px;
+}
+
+
+
+/* CH UNIT */
+/* ch = width of the character "0" */
+/*
+Meaning:
+If a font's "0" character width = 10px
+
+then
+
+1ch = 10px
+30ch ≈ width of 30 characters
+*/
+
+/* ch is very useful for:
+   input fields
+   text containers
+   limiting readable text width */
+
+.ch-input{
+    width:30ch;     /* input width ≈ space for 30 characters */
+    padding:10px;
+    margin-top:20px;
+}
+
+
+
+/* EX UNIT */
+/* ex = height of lowercase letter "x" in the font */
+/*
+Example:
+
+If letter "x" height = 8px
+
+then
+
+1ex = 8px
+*/
+
+/* ex is rarely used but useful for
+   typography scaling */
+
+.ex-text{
+    font-size:5ex;
+    margin-top:20px;
+}
+
+
+
+/* FR UNIT (FRACTION) */
+/* Used only in CSS GRID */
+/*
+fr divides the available space
+
+Example:
+grid-template-columns: 1fr 2fr 1fr
+
+Total parts = 4
+
+Column sizes:
+1/4  | 2/4 | 1/4
+*/
+.grid-container{
+    display:grid;
+    grid-template-columns:1fr 2fr 1fr;
+    gap:10px;
+    margin-top:20px;
+}
+
+.grid-box{
+    background:skyblue;
+    padding:20px;
+    text-align:center;
+}
