@@ -1,0 +1,216 @@
+/*GENERAL STYLING*/
+
+body{
+
+    font-family: Arial, sans-serif;
+    padding:30px;
+
+}
+
+.container{
+
+    display:flex;
+    gap:30px;
+
+}
+
+
+
+/*OVERFLOW PROPERTY*/
+
+/*
+Overflow decides what happens when content
+inside a box becomes larger than the box size.
+
+Basic syntax:
+
+overflow: value;
+
+Values we are learning here:
+hidden
+scroll
+auto
+*/
+
+
+.box{
+
+    width:200px;
+    height:120px;
+
+    border:2px solid black;
+    padding:10px;
+
+    background:#e3f2fd;
+
+}
+
+
+
+/*overflow: hidden*/
+
+/*
+Syntax
+
+overflow: hidden;
+
+Meaning:
+If content is larger than the box,
+extra content will be cut and hidden.
+Nothing outside the box will be visible.
+*/
+
+.hidden{
+
+    overflow:hidden;
+
+}
+
+
+
+/*overflow: scroll*/
+
+/*
+Syntax
+
+overflow: scroll;
+
+Meaning:
+Scrollbars will always appear
+even if the content fits inside the box.
+*/
+
+.scroll{
+
+    overflow:scroll;
+
+}
+
+
+
+/*overflow: auto*/
+
+/*
+Syntax
+
+overflow: auto;
+
+Meaning:
+Scrollbars appear only when needed.
+If content fits, no scrollbar appears.
+*/
+
+.auto{
+
+    overflow:auto;
+
+}
+
+
+
+/*Z-INDEX PROPERTY*/
+
+/*
+z-index controls which element appears on top
+when multiple elements overlap.
+
+Think of it like layers.
+
+Higher value → appears above
+Lower value → appears behind
+
+Important rule:
+z-index works only when position is set.
+*/
+
+
+.z-container{
+
+    position:relative;
+    height:200px;
+
+}
+
+
+
+/*common square style*/
+
+.square{
+
+    width:120px;
+    height:120px;
+
+    position:absolute;
+
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+}
+
+
+
+/*red box*/
+
+.red{
+
+    background:red;
+
+    top:20px;
+    left:20px;
+
+    z-index:1;
+
+}
+
+/*
+z-index:1
+
+This box will appear behind
+any element that has higher z-index.
+*/
+
+
+
+/*blue box*/
+
+.blue{
+
+    background:blue;
+
+    top:50px;
+    left:70px;
+
+    z-index:2;
+
+}
+
+/*
+z-index:2
+
+This box appears above the red box
+because 2 > 1
+*/
+
+
+
+/*green box*/
+
+.green{
+
+    background:green;
+
+    top:80px;
+    left:120px;
+
+    z-index:3;
+
+}
+
+/*
+z-index:3
+
+This box appears on top
+because it has the highest value.
+*/

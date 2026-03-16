@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About overflow and Z-index</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <body>
+
+    <h1>Understanding Overflow and Z-Index</h1>
+
+    <p>
+        In this page we will see how <b>overflow</b> controls extra content
+        inside a box and how <b>z-index</b> controls stacking of elements.
+    </p>
+
+
+    <!-- OVERFLOW EXAMPLES-->
+
+    <h2>Overflow Property</h2>
+
+    <p>
+        The boxes below contain more text than their size can hold.
+        Different overflow values decide what should happen.
+    </p>
+
+    <div class="container">
+
+        <div class="box hidden">
+            <h3>overflow: hidden</h3>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Quisquam temporibus amet exercitationem suscipit minus
+            architecto doloribus fugiat harum. This text will get cut.
+        </div>
+
+        <div class="box scroll">
+            <h3>overflow: scroll</h3>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Quisquam temporibus amet exercitationem suscipit minus
+            architecto doloribus fugiat harum architecto doloribus
+            fugiat harum architecto doloribus fugiat harum.
+        </div>
+
+        <div class="box auto">
+            <h3>overflow: auto</h3>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Quisquam temporibus amet exercitationem suscipit minus
+            architecto doloribus fugiat harum architecto doloribus
+            fugiat harum architecto doloribus fugiat harum.
+        </div>
+
+    </div>
+
+
+
+    <!--Z INDEX EXAMPLE-->
+
+    <h2>Z-Index Property</h2>
+
+    <p>
+        Z-index decides which element appears on top when elements overlap.
+    </p>
+
+    <div class="z-container">
+
+        <div class="square red">
+            Red Box
+        </div>
+
+        <div class="square blue">
+            Blue Box
+        </div>
+
+        <div class="square green">
+            Green Box
+        </div>
+
+    </div>
+
+</body>
+</body>
+</html>
