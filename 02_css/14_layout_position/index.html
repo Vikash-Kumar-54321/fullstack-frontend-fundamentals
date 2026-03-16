@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <body>
+
+    <h1>CSS Layout Properties Explained</h1>
+
+    <p>
+        This page demonstrates how layout works in CSS using:
+        <b>Float</b> and <b>Position</b>.
+    </p>
+
+    <!-- FLOAT SECTION -->
+
+    <section class="section">
+        <h2>1. Float Property</h2>
+
+        <p>
+            Float allows elements to move to the left or right of their container,
+            allowing text or other elements to wrap around them.
+        </p>
+
+        <div class="float-container">
+
+            <div class="box float-left">
+                Float Left
+            </div>
+
+            <div class="box float-right">
+                Float Right
+            </div>
+
+            <p>
+                When float is applied, elements move to one side of the container
+                and other content flows around them.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- POSITION SECTION -->
+
+    <section class="section">
+
+        <h2>2. Position Property</h2>
+
+        <p>
+            The position property controls how an element is placed in the document.
+        </p>
+
+        <!-- STATIC -->
+        <h3>Static Position (Default)</h3>
+
+        <div class="box static-box">
+            Static Position
+        </div>
+
+        <!-- RELATIVE -->
+        <h3>Relative Position</h3>
+
+        <div class="box relative-box">
+            Relative Position
+        </div>
+
+        <!-- ABSOLUTE -->
+        <h3>Absolute Position</h3>
+
+        <div class="container">
+
+            <div class="box absolute-box">
+                Absolute Position
+            </div>
+
+            <p>This container is the reference for the absolute element.</p>
+
+        </div>
+
+        <!-- FIXED -->
+
+        <h3>Fixed Position</h3>
+
+        <div class="box fixed-box">
+            Fixed
+        </div>
+
+        <!-- STICKY -->
+
+        <h3>Sticky Position</h3>
+
+        <div class="sticky-box">
+            Sticky Header
+        </div>
+
+        <p style="height:800px">
+            Scroll the page to see sticky behavior.
+        </p>
+
+    </section>
+
+</body>
+</body>
+</html>

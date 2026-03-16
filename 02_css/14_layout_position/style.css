@@ -1,0 +1,242 @@
+/* -----------------------------------------
+GENERAL STYLING
+------------------------------------------ */
+
+body{
+
+    font-family: Arial, sans-serif;
+    padding:20px;
+
+}
+
+.section{
+
+    margin-top:40px;
+
+}
+
+.box{
+
+    width:150px;
+    height:100px;
+
+    background-color: lightblue;
+    border:2px solid black;
+
+    text-align:center;
+    line-height:100px;
+    margin:10px;
+
+}
+
+
+
+/*FLOAT PROPERTY */
+
+/*
+Float moves elements to left or right side
+inside their container.
+
+Other content flows around floated elements.
+*/
+
+
+/* FLOAT LEFT */
+
+.float-left{
+
+    float:left;
+
+}
+
+/*
+This element moves to the LEFT side
+of its parent container.
+*/
+
+
+/* FLOAT RIGHT */
+
+.float-right{
+
+    float:right;
+
+}
+
+/*
+This element moves to the RIGHT side
+of its parent container.
+*/
+
+
+/* FLOAT NONE */
+
+.float-none{
+
+    float:none;
+
+}
+
+/*
+This is the default behavior.
+Element stays in normal document flow.
+*/
+
+
+
+/* POSITION PROPERTY*/
+
+/*
+The position property determines how
+an element is positioned in the document.
+
+Types:
+static
+relative
+absolute
+fixed
+sticky
+*/
+
+
+
+/*STATIC POSITION */
+
+.static-box{
+
+    position:static;
+
+}
+
+/*
+Static is the default position.
+
+top, bottom, left, right DO NOT WORK
+when position is static.
+*/
+
+
+
+/*RELATIVE POSITION*/
+
+.relative-box{
+
+    position:relative;
+
+    top:20px;
+    left:30px;
+
+}
+
+/*
+Relative position moves the element
+relative to its ORIGINAL position.
+
+Important:
+
+The element still keeps its original
+space in the layout.
+
+top: moves element downward
+left: moves element right
+right: moves element left
+bottom: moves element upward
+*/
+
+
+
+/*ABSOLUTE POSITION */
+
+.container{
+
+    position:relative;
+
+    border:2px dashed gray;
+    height:200px;
+
+}
+
+/*
+This container is set to position:relative.
+
+Absolute elements inside will use this
+container as reference.
+*/
+
+.absolute-box{
+
+    position:absolute;
+
+    top:20px;
+    right:20px;
+
+}
+
+/*
+Absolute removes the element
+from the normal document flow.
+
+It positions the element relative to the
+nearest positioned ancestor.
+
+Positioned ancestor means an element
+that has position:
+relative, absolute, fixed, or sticky.
+
+If none exist,
+it uses the viewport (browser window).
+*/
+
+
+
+/*FIXED POSITION */
+
+.fixed-box{
+
+    position:fixed;
+
+    bottom:20px;
+    right:20px;
+
+    background-color:orange;
+
+}
+
+/*
+Fixed elements stay attached to
+the browser viewport.
+
+Even when scrolling,
+the element does NOT move.
+
+Common uses:
+Chat buttons
+Floating action buttons
+Support icons
+*/
+
+
+
+/* STICKY POSITION*/
+
+.sticky-box{
+
+    position:sticky;
+
+    top:0;
+
+    background-color:yellow;
+    padding:10px;
+
+}
+
+/*
+Sticky behaves like relative
+until the page scroll reaches a threshold.
+
+Then it behaves like fixed.
+
+Example:
+Sticky navigation bars
+Sticky headers
+*/
