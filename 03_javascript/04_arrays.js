@@ -140,7 +140,15 @@ let sum = nums.reduce((acc, curr) => acc + curr, 0);
 
 console.log("Sum:", sum);
 
+// 2nd example
+let arr1 = ["a", "b", "a", "c", "b"];
 
+let count = arr1.reduce((acc, curr) => {
+    acc[curr] = (acc[curr] || 0) + 1;       //acc[curr] means {a:"",b:""}
+    return acc;
+}, {});
+
+console.log(count);
 
 /*SLICE*/
 
@@ -186,9 +194,9 @@ console.log(words.join(" "));
 
 let rev = [1, 2, 3];
 
-rev.reverse();
+let reve=rev.reverse();
 
-console.log("Reverse:", rev);
+console.log("Reverse:", reve);
 
 
 
@@ -200,7 +208,7 @@ Sort array
 
 let sortArr = [5, 2, 9, 1];
 
-sortArr.sort((a, b) => a - b);
+sortArr.sort((a, b) => a - b);               //ascending order   
 
 console.log("Sorted:", sortArr);
 
