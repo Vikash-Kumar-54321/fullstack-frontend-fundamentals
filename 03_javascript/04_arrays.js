@@ -200,6 +200,7 @@ console.log("Reverse:", reve);
 
 
 
+
 /*SORT*/
 
 /*
@@ -212,6 +213,18 @@ sortArr.sort((a, b) => a - b);               //ascending order
 
 console.log("Sorted:", sortArr);
 
+
+/*every*/
+
+/*
+ checking conditions on every elements of the array
+*/
+
+let Arr = [5, 2, 9, 1];
+
+let check=Arr.every((a) => typeof "number");               //checking whether all are numbes or not 
+
+console.log("All are numbers or not:", check);
 
 
 /*REAL LIFE EXAMPLE*/
