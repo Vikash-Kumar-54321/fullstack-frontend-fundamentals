@@ -91,3 +91,69 @@ function printData(a, b, ...rest) {
 printData(1, 2, 3, 4, 5);
 printData(1,2)
 
+
+/*
+------------------------------------------
+3. DESTRUCTURING (ARRAY)
+------------------------------------------
+
+Extract values from array easily
+*/
+
+let nums = [10, 20, 30];
+
+// normal way
+let x = nums[0];
+
+// destructuring
+let [a1, b1, c1] = nums;
+
+console.log(a1, b1, c1);
+
+
+// skipping values
+let [first, , third] = nums;
+
+console.log(first, third);
+
+
+// default value
+let [p = 100, q = 200] = [5];
+
+console.log(p, q);
+
+
+
+/*
+------------------------------------------
+4. DESTRUCTURING (OBJECT)
+------------------------------------------
+
+Extract values from object
+*/
+
+let person = {
+    name: "Vikash",
+    age: 21
+};
+
+// normal way
+let name1 = person.name;
+
+// destructuring
+let { name, age } = person;
+
+console.log(name, age);
+
+
+// rename variable
+let { name: userName } = person;
+
+console.log(userName);
+
+
+// default value
+let { city = "Patna" } = person;
+
+console.log(city);
+
