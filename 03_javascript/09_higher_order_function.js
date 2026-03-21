@@ -1,6 +1,4 @@
 /*
-02_higherOrderFunctions.js
-
 TOPIC: Higher Order Functions + Callbacks + setTimeout + setInterval
 
 ------------------------------------------
