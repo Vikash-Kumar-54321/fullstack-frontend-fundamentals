@@ -1,0 +1,317 @@
+# Computer Networking (CN) for Full Stack Development
+
+## 1. What is a Network?
+
+A network is simply a group of devices connected together so they can communicate and share data.
+
+Examples:
+
+* Your phone connected to WiFi
+* Computers connected in an office
+* Servers connected in a data center
+
+Each device in a network is called a **node**.
+
+Purpose of a network:
+
+* Share data (files, APIs, messages)
+* Share resources (printers, servers)
+* Enable communication (chat, video, web)
+
+---
+
+## 2. What is the Internet?
+
+The Internet is a **global network of networks**.
+
+It connects millions of private and public networks across the world.
+
+Important idea:
+
+* No single company owns the internet
+* It works using standard protocols (rules), mainly **TCP/IP**
+
+So:
+
+* Network = small connection
+* Internet = worldwide connection of networks
+
+---
+
+## 3. What is the World Wide Web (WWW)?
+
+WWW is **a service that runs on the Internet**.
+
+Difference:
+
+* Internet = infrastructure (roads)
+* WWW = websites (cars running on roads)
+
+WWW consists of:
+
+* Websites
+* Web pages (HTML, CSS, JS)
+* Browsers (Chrome, Firefox)
+
+It works using:
+
+* **HTTP / HTTPS protocol**
+
+---
+
+## 4. What is an IP Address?
+
+Every device connected to a network has a unique identifier called an **IP address**.
+
+Example:
+
+* `192.168.1.1` (IPv4)
+* `2001:0db8::1` (IPv6)
+
+Think of it like:
+
+* Home address for a device
+
+Purpose:
+
+* Identify sender and receiver
+* Route data correctly
+
+Types:
+
+* Public IP (visible on internet)
+* Private IP (inside local network)
+
+---
+
+## 5. What is a Port?
+
+A port is like a **door or channel inside a device**.
+
+While IP identifies the device, **port identifies the application**.
+
+Examples:
+
+* 80 → HTTP
+* 443 → HTTPS
+* 3000 → Node.js app (common in development)
+
+So:
+
+* IP = house
+* Port = room inside the house
+
+---
+
+## 6. What is DNS (Domain Name System)?
+
+DNS converts human-readable names into IP addresses.
+
+Example:
+
+* You type: `google.com`
+* DNS returns: `142.250.183.206`
+
+Why needed:
+
+* Humans remember names, not numbers
+
+Process:
+
+1. Browser asks DNS server
+2. DNS returns IP
+3. Browser connects to that IP
+
+---
+
+## 7. What is Cache?
+
+Cache is **temporary storage of frequently used data**.
+
+Used to improve speed.
+
+Types:
+
+* Browser cache (HTML, CSS, JS)
+* DNS cache (IP mappings)
+* Server cache (API responses)
+
+Benefits:
+
+* Faster loading
+* Reduced server load
+
+Example:
+If you visit a site again, it loads faster because resources are cached.
+
+---
+
+## 8. What Happens When You Type a URL in the Browser?
+
+This is one of the most important concepts for full stack developers.
+
+Let’s break it step by step.
+
+---
+
+### Step 1: URL Parsing
+
+You type:
+
+```
+https://example.com
+```
+
+Browser understands:
+
+* Protocol → HTTPS
+* Domain → example.com
+
+---
+
+### Step 2: DNS Lookup
+
+Browser needs IP address.
+
+Steps:
+
+1. Check browser cache
+2. Check OS cache
+3. Ask DNS server
+4. Get IP address
+
+---
+
+### Step 3: TCP Connection
+
+Browser establishes connection with server using TCP.
+
+Process (3-way handshake):
+
+1. Client → SYN
+2. Server → SYN-ACK
+3. Client → ACK
+
+Now connection is established.
+
+---
+
+### Step 4: HTTPS / TLS Handshake
+
+If HTTPS:
+
+* Secure connection is established
+* Encryption keys are exchanged
+
+Purpose:
+
+* Secure data transfer
+
+---
+
+### Step 5: Sending HTTP Request
+
+Browser sends request like:
+
+```
+GET / HTTP/1.1
+Host: example.com
+```
+
+---
+
+### Step 6: Server Processing
+
+Server:
+
+* Receives request
+* Runs backend code (Node.js, Python, etc.)
+* May query database
+* Prepares response
+
+---
+
+### Step 7: Server Response
+
+Server sends:
+
+* HTML
+* JSON
+* CSS / JS
+
+Example:
+
+```
+HTTP/1.1 200 OK
+Content-Type: text/html
+```
+
+---
+
+### Step 8: Browser Rendering
+
+Browser:
+
+1. Parses HTML
+2. Builds DOM
+3. Loads CSS
+4. Executes JavaScript
+5. Renders page
+
+---
+
+### Step 9: Additional Requests
+
+Browser may request:
+
+* Images
+* CSS files
+* JS files
+
+Each request repeats similar process.
+
+---
+
+## 9. Important Protocols You Should Know
+
+### HTTP / HTTPS
+
+* Used for web communication
+* Stateless protocol
+
+### TCP
+
+* Reliable communication
+* Ensures data reaches correctly
+
+### UDP
+
+* Faster but unreliable
+* Used in streaming, gaming
+
+---
+
+## 10. How This Helps in Full Stack
+
+As a full stack developer, these concepts help you:
+
+* Debug API issues
+* Understand request/response cycle
+* Work with backend servers
+* Optimize performance (caching)
+* Secure applications (HTTPS)
+* Handle ports and deployments
+
+---
+
+## 11. Simple Analogy (Quick Revision)
+
+* Internet = highway system
+* IP = house address
+* Port = room number
+* DNS = contact list
+* HTTP = language used
+* Browser = client
+* Server = restaurant kitchen
+* Cache = saved food for faster serving
+
