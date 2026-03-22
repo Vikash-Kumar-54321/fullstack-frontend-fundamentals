@@ -1,0 +1,220 @@
+* WebSockets (real-time communication)
+* Transmission modes (how data flows)
+
+
+# 1. Why Do We Need WebSockets?
+
+First understand the problem with HTTP.
+
+In HTTP:
+
+* Client sends request
+* Server sends response
+* Connection ends
+
+Example:
+
+* You open Instagram → request sent → data comes → done
+
+But what about real-time apps?
+
+Examples:
+
+* Chat app (WhatsApp)
+* Live stock prices
+* Online games
+
+Problem:
+HTTP cannot push data automatically
+
+---
+
+# 2. What is WebSocket?
+
+WebSocket is a protocol that creates a **continuous connection** between client and server.
+
+Simple idea:
+HTTP = ask → get → close
+WebSocket = stay connected and talk anytime
+
+---
+
+# 3. How WebSocket Works
+
+---
+
+## Step 1: Connection starts with HTTP
+
+Client sends request:
+"Upgrade connection to WebSocket"
+
+---
+
+## Step 2: Server agrees
+
+If server supports it:
+Connection is upgraded
+
+---
+
+## Step 3: Persistent Connection
+
+Now:
+
+* Connection stays open
+* Both sides can send data anytime
+
+---
+
+## Step 4: Two-way communication
+
+* Client → Server
+* Server → Client
+
+No need to request again and again
+
+---
+
+# 4. Simple Example
+
+Chat app:
+
+Without WebSocket:
+
+* Client keeps asking "new message?"
+* Server responds again and again
+
+With WebSocket:
+
+* Server pushes message instantly
+
+---
+
+# 5. Code Example (Node.js + WebSocket)
+
+Basic idea:
+
+```js id="9z1v5l"
+const WebSocket = require("ws");
+
+const server = new WebSocket.Server({ port: 3000 });
+
+server.on("connection", (socket) => {
+    console.log("Client connected");
+
+    socket.on("message", (msg) => {
+        console.log("Received:", msg.toString());
+
+        socket.send("Message received");
+    });
+});
+```
+
+---
+
+# 6. When to Use WebSockets?
+
+Use when:
+
+* Real-time updates needed
+* Chat apps
+* Live notifications
+* Multiplayer games
+
+Do NOT use when:
+
+* Simple data fetching (use HTTP)
+
+---
+
+# 7. Transmission Modes
+
+Now second topic.
+
+Transmission mode = how data flows between two devices
+
+---
+
+## 1. Simplex
+
+Data flows in one direction only
+
+Example:
+
+* TV broadcast
+* Keyboard → computer
+
+Simple idea:
+One-way communication
+
+---
+
+## 2. Half Duplex
+
+Data flows both ways, but **one at a time**
+
+Example:
+
+* Walkie-talkie
+
+You speak → then I speak
+Not at same time
+
+---
+
+## 3. Full Duplex
+
+Data flows both ways **at the same time**
+
+Example:
+
+* Phone call
+* WebSocket
+
+You and I can talk together
+
+---
+
+# 8. Comparison
+
+Simplex:
+
+* One direction only
+
+Half Duplex:
+
+* Two directions but turn by turn
+
+Full Duplex:
+
+* Both directions at same time
+
+---
+
+# 9. Real Connection with WebSocket
+
+WebSocket is:
+→ Full Duplex communication
+
+That’s why:
+
+* Fast
+* Real-time
+* Efficient
+
+---
+
+# 10. Final Understanding
+
+HTTP:
+
+* Request → Response
+* Not real-time
+
+WebSocket:
+
+* Continuous connection
+* Real-time communication
+* Full duplex
+
+
