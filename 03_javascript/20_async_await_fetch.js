@@ -1,6 +1,4 @@
 /*
-13_async_fetch.js
-
 TOPIC:
 - async / await
 - fetch (with .then and async/await)
