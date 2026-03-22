@@ -138,3 +138,84 @@ Static method:
 - belongs to class
 */
 
+
+
+/*
+------------------------------------------
+5. REAL EXAMPLE: COMPLEX NUMBERS
+------------------------------------------
+
+Complex number = a + bi
+
+Example:
+2 + 3i
+4 + 5i
+
+Addition:
+(2+3i) + (4+5i) = (6 + 8i)
+*/
+
+
+class Complex {
+    #real;
+    #imaginary;
+    constructor(real, imaginary) {
+        this.#real = real;
+        this.#imaginary = imaginary;
+    }
+
+    /*
+    method to display number
+    */
+    display() {
+        console.log(this.#real + " + " + this.#imaginary + "i");
+    }
+    get real(){
+        return this.#real;
+    }
+    get imaginary(){
+        return this.#imaginary;
+    }
+    /*
+    method to add another complex number
+    */
+    add(other) {
+        this.#real += other.real;
+        this.#imaginary += other.imaginary;
+    }
+}
+
+
+let c1 = new Complex(2, 3);
+let c2 = new Complex(4, 5);
+
+/*
+adding c1 and c2
+*/
+c1.add(c2);
+
+c1.display();
+
+
+
+/*
+------------------------------------------
+6. FINAL UNDERSTANDING
+------------------------------------------
+
+static:
+- belongs to class
+- called using ClassName
+
+getter:
+- access value like property
+
+setter:
+- update value with control
+
+private (#):
+- hidden from outside
+
+real example:
+- complex numbers show real use of class
+*/
