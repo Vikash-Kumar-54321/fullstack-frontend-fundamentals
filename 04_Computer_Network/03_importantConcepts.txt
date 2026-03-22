@@ -1,0 +1,379 @@
+
+* REST API design
+* CORS
+* Reverse Proxy (Nginx)
+* Load Balancing
+* CDN
+* Scaling
+
+# 1. REST API (How to Design Backend Properly)
+
+REST = a way to design APIs cleanly
+
+Think:
+Your backend is a service, and frontend talks to it.
+
+---
+
+## Basic Idea
+
+Use:
+
+* Proper URLs
+* Proper HTTP methods
+
+---
+
+## Good API Design
+
+Bad:
+
+```
+/getUsers
+/createUser
+/deleteUser
+```
+
+Good:
+
+```
+GET    /users
+POST   /users
+DELETE /users/1
+```
+
+---
+
+## Rules You Should Follow
+
+1. Use nouns (users, products)
+2. Use HTTP methods correctly
+3. Keep URLs clean
+4. Send JSON data
+
+---
+
+## Example
+
+Frontend:
+
+```
+GET /products
+```
+
+Backend:
+
+```
+returns all products
+```
+
+---
+
+## Why REST is Important
+
+* Clean structure
+* Easy to scale
+* Easy for frontend to understand
+
+---
+
+# 2. CORS (Very Important Problem)
+
+CORS = Cross-Origin Resource Sharing
+
+---
+
+## Problem
+
+Frontend and backend are on different domains:
+
+Example:
+
+* Frontend → localhost:3000
+* Backend → localhost:5000
+
+Browser blocks request
+
+Why?
+Security
+
+---
+
+## Solution
+
+Backend must allow frontend
+
+In Node.js:
+
+```js
+const cors = require("cors");
+app.use(cors());
+```
+
+---
+
+## Simple Idea
+
+Browser says:
+"I will not allow this request unless server allows it"
+
+---
+
+## Real Example
+
+Without CORS:
+→ Request blocked
+
+With CORS:
+→ Request allowed
+
+---
+
+# 3. Reverse Proxy (Nginx)
+
+This is very important in real systems.
+
+---
+
+## What is Reverse Proxy?
+
+A middle server between client and backend
+
+Flow:
+Client → Nginx → Backend
+
+---
+
+## Why Needed?
+
+1. Security (hide backend)
+2. Performance
+3. Load distribution
+
+---
+
+## Simple Analogy
+
+You go to office:
+
+* Receptionist = Nginx
+* Employees = backend servers
+
+You don’t directly go to employees
+Receptionist handles everything
+
+---
+
+## Example
+
+User request:
+
+```
+example.com
+```
+
+Nginx decides:
+
+* Which server to send request to
+
+---
+
+# 4. Load Balancing
+
+When many users come, one server is not enough.
+
+---
+
+## What is Load Balancing?
+
+Distribute requests across multiple servers
+
+---
+
+## Example
+
+Instead of:
+
+```
+1 server → 1000 users → slow
+```
+
+Use:
+
+```
+3 servers → 1000 users → fast
+```
+
+---
+
+## Types
+
+* Round Robin (most common)
+* Least connections
+* IP based
+
+---
+
+## Flow
+
+Client → Load Balancer → Multiple servers
+
+---
+
+## Why Important?
+
+* Prevent crashes
+* Improve speed
+* Handle traffic
+
+---
+
+# 5. CDN (Content Delivery Network)
+
+---
+
+## Problem
+
+Server is in India
+User is in USA → slow response
+
+---
+
+## Solution
+
+Store content in multiple locations
+
+---
+
+## What is CDN?
+
+Network of servers around the world
+
+---
+
+## Example
+
+User requests image:
+
+* CDN gives from nearest location
+
+---
+
+## Simple Idea
+
+Instead of one shop far away
+→ many small shops near users
+
+---
+
+## What CDN Stores
+
+* Images
+* CSS
+* JS
+* Videos
+
+---
+
+## Benefits
+
+* Faster loading
+* Less load on backend
+* Better user experience
+
+---
+
+# 6. Scaling (Very Important)
+
+Scaling means handling more users
+
+---
+
+## Two Types
+
+---
+
+### Vertical Scaling
+
+Increase power of one server
+
+Example:
+
+* More RAM
+* Better CPU
+
+Problem:
+
+* Limited
+
+---
+
+### Horizontal Scaling
+
+Add more servers
+
+Example:
+
+* 1 server → 5 servers
+
+Better approach
+
+---
+
+## Real System Flow
+
+User → CDN → Load Balancer → Nginx → Backend → Database
+
+---
+
+# 7. Complete Real World Flow
+
+Let’s combine everything
+
+---
+
+### Step 1
+
+User opens website
+
+---
+
+### Step 2
+
+Request goes to CDN
+→ Static files served
+
+---
+
+### Step 3
+
+If dynamic request:
+→ goes to Load Balancer
+
+---
+
+### Step 4
+
+Load balancer sends to one server
+
+---
+
+### Step 5
+
+Nginx receives request
+
+---
+
+### Step 6
+
+Nginx forwards to backend (Node.js)
+
+---
+
+### Step 7
+
+Backend:
+
+* Process request
+* Fetch from DB
+
