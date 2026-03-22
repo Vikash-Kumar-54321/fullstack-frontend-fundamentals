@@ -81,5 +81,40 @@ fetch("https://jsonplaceholder.typicode.com/posts/1")
         console.log("Error:", error);
     });
 
+/*
+------------------------------------------
+4. FETCH USING async/await
+------------------------------------------
+*/
+
+async function getPost() {
+    try {
+        let response = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+
+        let data = await response.json();
+
+        console.log("Data using await:", data);
+
+    } catch (error) {
+        console.log("Error:", error);
+    }
+}
+
+getPost();
+
+
+
+/*
+------------------------------------------
+5. IMPORTANT: FETCH HAS 2 STEPS
+------------------------------------------
+
+Step 1:
+fetch() → returns response (headers + status)
+
+Step 2:
+response.json() → actual data
+*/
+
 
 
