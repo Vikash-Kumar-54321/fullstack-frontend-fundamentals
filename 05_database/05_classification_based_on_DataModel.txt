@@ -134,3 +134,35 @@ Disadvantages:
 - Complex implementation
 - Less widely used compared to relational model
 
+
+------------------------------------------------------------
+
+
+6. COMPARISON OF DATA MODELS
+----------------------------
+
+Model           Structure        Relationship Type
+---------------------------------------------------
+Hierarchical    Tree             One-to-Many
+Network         Graph            Many-to-Many
+Relational      Tables           Keys (PK, FK)
+Object-Oriented Objects          Real-world objects
+
+
+------------------------------------------------------------
+
+
+7. WHEN TO USE WHICH MODEL
+--------------------------
+
+Hierarchical:
+- When data follows strict parent-child structure
+
+Network:
+- When complex relationships are needed
+
+Relational:
+- When structured data and querying is required
+
+Object-Oriented:
+- When working with OOP-based applications
