@@ -71,3 +71,90 @@ Real-life example:
 When you login to Instagram or Amazon,
 DBMS is working in the backend.
 
+
+------------------------------------------------------------
+
+
+4. FILE-BASED SYSTEM (OLD METHOD)
+---------------------------------
+Before DBMS, data was stored in files.
+
+Example:
+- students.txt
+- employees.txt
+- orders.txt
+
+Each file stores data separately.
+
+Problem:
+No connection between files.
+
+
+------------------------------------------------------------
+
+
+5. ADVANTAGES OF FILE-BASED SYSTEM
+----------------------------------
+- Simple to use
+- Easy to create files
+- No special software needed
+- Low cost
+
+
+------------------------------------------------------------
+
+
+6. DISADVANTAGES OF FILE-BASED SYSTEM
+--------------------------------------
+
+1. Data Redundancy (Duplicate Data)
+   Same data stored multiple times.
+
+   Example:
+   students.txt → Vikash
+   fees.txt → Vikash
+
+2. Data Inconsistency
+   Data updated in one file but not in another.
+
+3. Difficult Data Access
+   No easy way to search or query data.
+
+4. No Security
+   Anyone can access files.
+
+5. No Relationships
+   Files are independent, no connection between them.
+
+6. No Backup & Recovery
+   If file is deleted → data lost permanently.
+
+
+------------------------------------------------------------
+
+
+7. WHY DBMS IS BETTER?
+----------------------
+
+Feature              File System      DBMS
+--------------------------------------------
+Data duplication     High             Low
+Security             No               Yes
+Relationships        No               Yes
+Querying             Hard             Easy
+Backup               No               Yes
+
+
+------------------------------------------------------------
+
+
+FINAL UNDERSTANDING
+-------------------
+
+Flow:
+Data → Database → DBMS
+
+- Data = Raw facts
+- Database = Organized data
+- DBMS = Tool to manage data
+
