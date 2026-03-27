@@ -145,3 +145,19 @@ ID   CID
 Advantage:
 Simple, flexible, and powerful with SQL support.
 
+
+
+c. PHYSICAL DATA MODEL
+-----------------------
+Physical data model defines how data is actually stored in the system.
+
+Explanation:
+This model deals with storage details like indexing, file organization, disk storage, and performance optimization.
+
+Example:
+- Data stored in B-Trees
+- Indexed columns for faster search
+
+This level is handled by DBMS internally.
+
+
