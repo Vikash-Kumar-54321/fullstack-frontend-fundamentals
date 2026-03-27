@@ -12,3 +12,33 @@ Databases can be designed for a single user or multiple users depending on the a
 1. Single-User Database
 2. Multi-User Database
 
+
+------------------------------------------------------------
+
+
+3. SINGLE-USER DATABASE
+------------------------
+A single-user database allows only one user to access the database at a time.
+
+Explanation:
+Only one person can read, write, or modify data at any given moment. These databases are usually used in personal or small-scale applications.
+
+Example:
+- Personal computer database
+- MS Access used by one person
+
+Real-life Example:
+A student maintaining personal records on their laptop.
+
+Advantages:
+- Simple to design and manage
+- No concurrency issues
+- Low cost
+
+Disadvantages:
+- Not scalable
+- Cannot support teamwork
+- Limited performance
+
+
+------------------------------------------------------------
