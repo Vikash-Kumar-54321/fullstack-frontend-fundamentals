@@ -1,0 +1,43 @@
+1. WHAT IS DBMS?
+DBMS is software that helps store, manage, and retrieve data efficiently.
+
+Explanation:
+A DBMS acts as a bridge between users and the database so that users do not have to deal with raw data files directly. It provides structured storage, fast querying, and controlled access.
+
+Example:
+When you login to a website, your data is fetched using DBMS.
+
+2. HOW DBMS MAKES FUNCTIONALITY EASY
+DBMS simplifies data operations like storing, updating, retrieving, and deleting data.
+
+Explanation:
+Instead of manually searching files, DBMS allows using queries (like SQL) to quickly access data. It handles complex operations like joins, filtering, sorting, and indexing internally.
+
+Example:
+SELECT * FROM users WHERE age > 18;
+This single query replaces manual searching in files.
+
+
+
+3. HOW DBMS PROVIDES SECURITY
+-----------------------------
+DBMS protects data by controlling who can access and modify it.
+
+Explanation:
+DBMS provides authentication (login), authorization (permissions), and encryption to ensure data is safe. Different users can have different access levels.
+
+Example:
+Admin can delete data, but normal users can only view data.
+
+
+
+4. WHAT IS DATA MODELING?
+-------------------------
+Data modeling is the process of designing how data is structured, stored, and related.
+
+Explanation:
+It defines how data elements connect with each other and how they will be stored in a database. It is done before creating the actual database.
+
+Example:
+Designing a system where a student is linked to courses and teachers.
+
