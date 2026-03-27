@@ -63,3 +63,40 @@ Disadvantages:
 - Complex design
 - Difficult to maintain
 
+
+------------------------------------------------------------
+
+
+4. RELATIONAL DATA MODEL
+------------------------
+Relational model stores data in tables with rows and columns.
+
+Explanation:
+This is the most widely used model. Data is stored in tables, and relationships are defined using keys (Primary Key and Foreign Key).
+
+Structure:
+Table (Rows + Columns)
+
+Example:
+
+Students Table:
+ID   Name
+1    Vikash
+
+Courses Table:
+CID  Course
+101  BTech
+
+Enrollment Table:
+ID   CID
+1    101
+
+Advantages:
+- Simple and easy to understand
+- Powerful querying using SQL
+- Flexible and scalable
+
+Disadvantages:
+- Complex joins can be slow
+- Not ideal for unstructured data
+
