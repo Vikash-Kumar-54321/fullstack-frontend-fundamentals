@@ -1,0 +1,14 @@
+1. WHAT IS CLASSIFICATION BASED ON NUMBER OF USERS?
+---------------------------------------------------
+This classification defines databases based on how many users can access them at a time.
+
+Explanation:
+Databases can be designed for a single user or multiple users depending on the application requirements like personal use or enterprise systems.
+
+
+2. TYPES OF DATABASES BASED ON USERS
+------------------------------------
+
+1. Single-User Database
+2. Multi-User Database
+
