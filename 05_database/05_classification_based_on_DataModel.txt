@@ -100,3 +100,37 @@ Disadvantages:
 - Complex joins can be slow
 - Not ideal for unstructured data
 
+
+------------------------------------------------------------
+
+
+5. OBJECT-ORIENTED DATA MODEL
+-----------------------------
+Object-oriented model stores data in the form of objects similar to programming languages.
+
+Explanation:
+This model combines database concepts with object-oriented programming. Data is stored as objects with properties (attributes) and methods (functions).
+
+Concepts:
+- Object
+- Class
+- Inheritance
+- Encapsulation
+
+Example:
+
+Class: Student
+Attributes: name, age
+Methods: getDetails()
+
+Object:
+Student1 = { name: Vikash, age: 22 }
+
+Advantages:
+- Matches real-world entities
+- Easy integration with OOP languages like Java, C++
+
+Disadvantages:
+- Complex implementation
+- Less widely used compared to relational model
+
