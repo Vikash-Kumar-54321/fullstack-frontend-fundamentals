@@ -1,0 +1,50 @@
+1. WHAT IS SCHEMA?
+Schema = Structure or design of a database.
+
+Simple meaning:
+Schema tells:
+- What data will be stored
+- In what format
+- Relationships between data
+
+It is like a blueprint of a database.
+
+Example:
+Student Table Schema:
+- Name (String)
+- Age (Integer)
+- Course (String)
+
+Important:
+Schema does NOT change frequently.
+
+
+
+2. WHAT IS DATABASE INSTANCE?
+Instance = Actual data stored in the database at a particular time.
+
+Simple meaning:
+- Schema = Design (fixed)
+- Instance = Data (changes frequently)
+
+Example:
+
+Schema:
+Name, Age, Course
+
+Instance at Time 1:
+Vikash, 22, BTech
+
+Instance at Time 2:
+Vikash, 23, BTech
+
+ Data changes → Instance changes
+
+3. DIFFERENCE BETWEEN SCHEMA & INSTANCE
+
+Feature        Schema                Instance
+----------------------------------------------
+Meaning        Structure             Actual Data
+Change         Rare                  Frequent
+Example        Table Design          Table Records
+
