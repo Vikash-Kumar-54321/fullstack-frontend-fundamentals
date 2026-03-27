@@ -68,3 +68,80 @@ Relationship:
 This is often represented using ER diagrams.
 
 
+b. RECORD-BASED DATA MODELS
+---------------------------
+Record-based models represent data in fixed formats using records and fields.
+
+Explanation:
+These models are closer to actual implementation and define how data is logically structured in the database.
+
+Types:
+1. Hierarchical Model
+2. Network Model
+3. Relational Model
+
+
+1. HIERARCHICAL MODEL
+---------------------
+Hierarchical model organizes data in a tree-like structure with parent-child relationships.
+
+Explanation:
+Each child has only one parent, and data is accessed from top to bottom. It is simple but rigid.
+
+Structure:
+Parent → Child → Sub-child
+
+Example:
+Company
+  └── Department
+        └── Employee
+
+Limitation:
+One child cannot have multiple parents.
+
+
+------------------------------------------------------------
+
+
+2. NETWORK MODEL
+----------------
+Network model allows data to have multiple parent-child relationships.
+
+Explanation:
+It is more flexible than the hierarchical model because a child can have multiple parents. It uses a graph structure.
+
+Example:
+Student can enroll in multiple courses,
+and each course can have multiple students.
+
+Structure:
+Student ↔ Course (many-to-many)
+
+Limitation:
+Complex to design and maintain.
+
+
+3. RELATIONAL MODEL
+--------------------
+Relational model organizes data into tables (rows and columns).
+
+Explanation:
+This is the most widely used model. Data is stored in tables, and relationships are created using keys (Primary Key and Foreign Key).
+
+Example:
+
+Students Table:
+ID   Name
+1    Vikash
+
+Courses Table:
+CID  Course
+101  BTech
+
+Enrollment Table:
+ID   CID
+1    101
+
+Advantage:
+Simple, flexible, and powerful with SQL support.
+
