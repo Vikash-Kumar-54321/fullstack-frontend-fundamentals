@@ -37,3 +37,29 @@ Disadvantages:
 - Rigid structure
 - No multiple parent relationships
 
+
+------------------------------------------------------------
+
+
+3. NETWORK DATA MODEL
+---------------------
+Network model stores data in a graph structure allowing multiple relationships.
+
+Explanation:
+Unlike hierarchical model, a child can have multiple parents. It supports many-to-many relationships and is more flexible.
+
+Structure:
+Node ↔ Node (multiple connections)
+
+Example:
+Student ↔ Course
+A student can enroll in multiple courses, and a course can have multiple students.
+
+Advantages:
+- Flexible relationships
+- Supports complex data structures
+
+Disadvantages:
+- Complex design
+- Difficult to maintain
+
