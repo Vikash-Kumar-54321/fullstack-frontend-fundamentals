@@ -156,3 +156,55 @@ Types:
    Example:
    Adding new column → user view remains same
 
+
+11. ADVANTAGES OF THREE-SCHEMA ARCHITECTURE
+
+1. Data Independence
+   - Changes in one level do not affect others
+
+2. Security
+   - Users see only required data
+
+3. Flexibility
+   - Easy to modify database
+
+4. Data Abstraction
+   - Hides complexity from users
+
+5. Multiple Views
+   - Different users → different views
+
+
+
+12. DISADVANTAGES OF THREE-SCHEMA ARCHITECTURE
+----------------------------------------------
+
+1. Complexity
+   - More layers → harder to understand
+
+2. Performance Overhead
+   - Multiple levels may slow down processing
+
+3. Hard Implementation
+   - Difficult to design in real systems
+
+4. Not Fully Implemented
+   - Most DBMS do not strictly follow all levels
+
+
+
+
+REAL-WORLD ANALOGY
+-------------------
+
+Think of a Mobile App:
+
+External Level:
+- What user sees (UI)
+
+Conceptual Level:
+- App logic and structure
+
+Internal Level:
+- Database + server storage
+
