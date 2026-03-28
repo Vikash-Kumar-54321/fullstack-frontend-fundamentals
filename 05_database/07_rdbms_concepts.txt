@@ -114,3 +114,57 @@ Explanation:
 Relationships are implemented using foreign keys.
 
 
+
+
+8. WHAT IS NORMALIZATION?
+Normalization is the process of organizing data to reduce redundancy.
+
+Explanation:
+It divides data into multiple tables to avoid duplication and maintain consistency.
+
+Example:
+Instead of storing user info in every order,
+store user in one table and reference it.
+
+Benefits:
+- Removes duplicate data
+- Improves consistency
+- Saves storage
+
+
+------------------------------------------------------------
+
+
+9. WHAT IS DENORMALIZATION?
+Denormalization is the process of combining tables to improve performance.
+
+Explanation:
+Sometimes joins are expensive, so data is duplicated intentionally to make queries faster.
+
+Example:
+Storing user name directly in orders table.
+
+Trade-off:
+Faster reads but more redundancy.
+
+
+------------------------------------------------------------
+
+
+10. WHAT ARE CONSTRAINTS?
+Constraints are rules applied to columns to maintain data integrity.
+
+Types:
+
+- NOT NULL → Cannot be empty
+- UNIQUE → No duplicate values
+- PRIMARY KEY → Unique + Not null
+- FOREIGN KEY → Maintains relationship
+- CHECK → Condition on values
+
+Example:
+Age must be greater than 18
+
+
+------------------------------------------------------------
+
