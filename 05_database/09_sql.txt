@@ -361,3 +361,31 @@ Improves search performance.
 
 ------------------------------------------------------------
 
+
+CONSTRAINTS:-
+
+33. NOT NULL
+Column cannot be empty.
+
+34. UNIQUE
+No duplicate values.
+
+35. PRIMARY KEY
+Unique + Not null.
+
+36. FOREIGN KEY
+Links tables.
+
+
+------------------------------------------------------------
+
+DCL COMMANDS:-
+
+37. GRANT
+GRANT SELECT ON users TO user1;
+
+38. REVOKE
+REVOKE SELECT ON users FROM user1;
+
+
+------------------------------------------------------------
