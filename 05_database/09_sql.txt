@@ -389,3 +389,44 @@ REVOKE SELECT ON users FROM user1;
 
 
 ------------------------------------------------------------
+
+
+TCL COMMANDS:-
+
+39. COMMIT
+Saves changes.
+
+40. ROLLBACK
+Undo changes.
+
+41. SAVEPOINT
+Partial rollback.
+
+
+------------------------------------------------------------
+
+
+FULL STACK FLOW:-
+
+Frontend → API → Backend → SQL Query → Database
+
+Example:
+
+User Login:
+SELECT * FROM users WHERE email = 'abc@gmail.com';
+
+
+------------------------------------------------------------
+
+
+FINAL UNDERSTANDING:-
+
+SQL = Language to control database
+
+Main operations:
+- Create (DDL)
+- Insert/Update/Delete (DML)
+- Query (DQL)
+- Control (DCL)
+- Transactions (TCL)
+
