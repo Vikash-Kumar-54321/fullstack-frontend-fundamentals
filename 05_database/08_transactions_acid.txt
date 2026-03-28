@@ -64,3 +64,77 @@ ROLLBACK
 
 
 ------------------------------------------------------------
+
+
+5. WHAT IS ACID PROPERTY?
+ACID is a set of properties that ensure reliable transaction processing.
+
+ACID stands for:
+- Atomicity
+- Consistency
+- Isolation
+- Durability
+
+
+------------------------------------------------------------
+
+
+6. ATOMICITY
+Atomicity means a transaction is either fully completed or not executed at all.
+
+Explanation:
+No partial execution is allowed. If any step fails, the entire transaction is rolled back.
+
+Example:
+Bank Transfer:
+If money is deducted but not added → rollback happens
+
+Result:
+Either both operations happen or none.
+
+
+------------------------------------------------------------
+
+
+7. CONSISTENCY
+Consistency ensures that the database remains in a valid state before and after a transaction.
+
+Explanation:
+All rules, constraints, and relationships must be maintained.
+
+Example:
+If total money in system was 5000 before transaction,
+it should remain 5000 after transfer.
+
+Invalid state is not allowed.
+
+
+------------------------------------------------------------
+
+
+8. ISOLATION
+Isolation ensures that multiple transactions do not interfere with each other.
+
+Explanation:
+Each transaction behaves as if it is the only one running.
+
+Example:
+Two users booking the same seat:
+Only one should succeed.
+
+DBMS ensures no conflict.
+
+
+------------------------------------------------------------
+
+
+9. DURABILITY
+Durability ensures that once a transaction is committed, it is permanently stored.
+
+Explanation:
+Even if system crashes, committed data will not be lost.
+
+Example:
+After successful payment,
+even if server crashes, order is saved.
+
