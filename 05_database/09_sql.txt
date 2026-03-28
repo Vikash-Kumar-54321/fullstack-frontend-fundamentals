@@ -270,3 +270,65 @@ All records from both tables.
 
 ------------------------------------------------------------
 
+
+ADVANCED QUERIES:-
+
+26. SUBQUERY
+Query inside another query.
+
+SELECT name
+FROM users
+WHERE id IN (
+    SELECT user_id FROM orders
+);
+
+
+------------------------------------------------------------
+
+
+27. EXISTS
+Checks if subquery returns data.
+
+SELECT name
+FROM users u
+WHERE EXISTS (
+    SELECT 1 FROM orders o WHERE o.user_id = u.id
+);
+
+EXISTS:-
+WHERE EXISTS (subquery) -> Checks row-by-row and Stops early (optimized)
+
+
+IN:-
+WHERE id IN (SELECT user_id FROM orders) -> Compares full list and Can be slower for large data
+
+
+
+------------------------------------------------------------
+
+
+28. IN / NOT IN
+SELECT * FROM users
+WHERE id IN (1, 2, 3);
+
+
+------------------------------------------------------------
+
+
+29. BETWEEN
+SELECT * FROM users
+WHERE age BETWEEN 18 AND 25;
+
+
+------------------------------------------------------------
+
+
+30. LIKE
+Pattern matching.
+
+SELECT * FROM users
+WHERE name LIKE 'V%';
+
+
+------------------------------------------------------------
+
