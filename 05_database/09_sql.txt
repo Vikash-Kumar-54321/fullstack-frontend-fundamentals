@@ -332,3 +332,32 @@ WHERE name LIKE 'V%';
 
 ------------------------------------------------------------
 
+
+CASE (IMPORTANT):-
+
+31. CASE STATEMENT
+Used for conditional logic.
+
+SELECT name,
+CASE
+    WHEN age >= 18 THEN 'Adult'
+    ELSE 'Minor'
+END AS status
+FROM users;
+
+
+------------------------------------------------------------
+
+
+INDEXING:-
+
+32. CREATE INDEX
+CREATE INDEX idx_name
+ON users(name);
+
+Explanation:
+Improves search performance.
+
+
+------------------------------------------------------------
+
