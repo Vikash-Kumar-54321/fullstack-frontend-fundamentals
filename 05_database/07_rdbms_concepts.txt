@@ -168,3 +168,80 @@ Age must be greater than 18
 
 ------------------------------------------------------------
 
+
+11. WHAT IS INDEXING?
+Indexing is a technique to speed up data retrieval.
+
+Explanation:
+Index works like a book index, allowing fast search instead of scanning the whole table.
+
+Example:
+Searching user by ID becomes faster with index.
+
+Trade-off:
+Faster read, slower write.
+
+
+------------------------------------------------------------
+
+
+12. WHAT IS SQL?
+SQL is a language used to interact with relational databases.
+
+Explanation:
+It is used to:
+- Create tables
+- Insert data
+- Update data
+- Delete data
+- Query data
+
+Example:
+SELECT * FROM users;
+
+
+------------------------------------------------------------
+
+
+13. WHAT IS JOIN?
+Join is used to combine data from multiple tables.
+
+Types:
+
+- INNER JOIN → Matching data only
+- LEFT JOIN → All from left + matching from right
+- RIGHT JOIN → All from right + matching from left
+
+Example:
+Users + Orders table joined using user_id
+
+
+------------------------------------------------------------
+
+
+14. WHAT IS SCHEMA IN RDBMS?
+Schema defines the structure of tables in the database.
+
+Explanation:
+It includes:
+- Table names
+- Columns
+- Data types
+- Relationships
+
+
+------------------------------------------------------------
+
+
+15. WHAT IS DATA INTEGRITY?
+Data integrity ensures accuracy and consistency of data.
+
+Types:
+
+- Entity Integrity → Primary key must be unique
+- Referential Integrity → Foreign key must match
+- Domain Integrity → Valid data types
+
+Example:
+Cannot insert order with invalid user_id
+
