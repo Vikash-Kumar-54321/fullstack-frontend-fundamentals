@@ -1,0 +1,81 @@
+1. WHAT IS SQL?
+SQL (Structured Query Language) is used to interact with relational databases.
+
+Explanation:
+SQL allows us to create, read, update, and delete data from databases. It is the backbone of backend communication with RDBMS.
+
+Example:
+SELECT * FROM users;
+
+
+------------------------------------------------------------
+
+
+2. CLASSIFICATION OF SQL COMMANDS
+
+1. DDL (Data Definition Language)
+2. DML (Data Manipulation Language)
+3. DQL (Data Query Language)
+4. DCL (Data Control Language)
+5. TCL (Transaction Control Language)
+
+
+------------------------------------------------------------
+
+DDL COMMANDS:-
+
+3. CREATE TABLE
+Used to create a new table.
+
+Syntax:
+CREATE TABLE users (
+    id INT PRIMARY KEY,
+    name VARCHAR(50),
+    age INT
+);
+
+Explanation:
+Defines structure of table.
+
+
+------------------------------------------------------------
+
+
+4. ALTER TABLE
+Used to modify an existing table.
+
+Examples:
+
+Add column:
+ALTER TABLE users ADD email VARCHAR(100);
+
+Modify column:
+ALTER TABLE users MODIFY age INT;
+
+Drop column:
+ALTER TABLE users DROP COLUMN email;
+
+
+------------------------------------------------------------
+
+
+5. DROP TABLE
+Used to delete a table permanently.
+
+DROP TABLE users;
+
+
+------------------------------------------------------------
+
+
+6. TRUNCATE TABLE
+Removes all data but keeps table structure.
+
+TRUNCATE TABLE users;
+
+Difference:
+DELETE → removes row by row
+TRUNCATE → removes all instantly
+
+
+------------------------------------------------------------
