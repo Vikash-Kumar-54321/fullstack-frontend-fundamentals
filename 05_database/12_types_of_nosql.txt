@@ -141,3 +141,58 @@ Challenges:
 
 ------------------------------------------------------------
 
+5. GRAPH DATABASE
+Graph databases store data using nodes and relationships.
+
+Explanation:
+Instead of tables or documents, graph databases represent data as nodes (entities) and edges (relationships). This structure makes it very efficient to store and query highly connected data.
+
+Structure Example:
+
+Node: User
+Node: Product
+
+Relationship:
+User → purchased → Product
+
+
+Examples of Graph Databases:
+Neo4j
+Amazon Neptune
+ArangoDB
+
+
+Use Cases:
+- Social networks
+- Recommendation systems
+- Fraud detection
+- Knowledge graphs
+
+
+Advantages:
+- Extremely efficient for relationship queries
+- Natural representation of connected data
+- Fast traversal of relationships
+
+
+Challenges:
+- Not suitable for simple data storage
+- Hard to scale horizontally
+- Limited support compared to relational databases
+
+
+------------------------------------------------------------
+
+
+6. COMPARISON OF NOSQL DATABASE TYPES
+-------------------------------------
+
+Type            Storage Model     Best For
+--------------------------------------------------
+Key-Value       Key → Value       Caching, sessions
+Document        JSON documents    Web applications
+Column-Family   Column groups     Big data analytics
+Graph           Nodes/edges       Social networks
+
+
+------------------------------------------------------------
