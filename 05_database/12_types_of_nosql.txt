@@ -1,0 +1,58 @@
+1. WHAT IS NOSQL DATABASE CLASSIFICATION?
+NoSQL databases are classified based on how they store and organize data.
+
+Explanation:
+Unlike relational databases that store data in tables, NoSQL databases use different storage models optimized for scalability, flexibility, and distributed systems.
+
+Main Types of NoSQL Databases:
+1. Key-Value Databases
+2. Document Databases
+3. Column-Family Databases
+4. Graph Databases
+
+
+------------------------------------------------------------
+
+
+2. KEY-VALUE DATABASE
+---------------------
+A key-value database stores data as pairs of keys and values.
+
+Explanation:
+Each key is unique and used to retrieve the corresponding value. The database does not understand the internal structure of the value; it simply stores and retrieves it.
+
+Structure:
+Key → Value
+
+Example:
+user_101 → {name: "Vikash", age: 22}
+
+The key acts like an identifier, and the value can be anything such as text, JSON, or binary data.
+
+
+Examples of Key-Value Databases:
+Redis
+Amazon DynamoDB
+Riak
+
+
+Use Cases:
+- Session storage
+- Caching systems
+- User authentication tokens
+- Shopping cart data
+
+
+Advantages:
+- Extremely fast data retrieval
+- Simple architecture
+- Easy horizontal scaling
+
+
+Challenges:
+- Limited query capability
+- Cannot perform complex queries
+- Difficult to represent relationships between data
+
+
+------------------------------------------------------------
