@@ -196,3 +196,41 @@ Graph           Nodes/edges       Social networks
 
 
 ------------------------------------------------------------
+
+
+7. HOW TO CHOOSE THE RIGHT NOSQL DATABASE
+-----------------------------------------
+
+Choose Key-Value:
+When you need extremely fast lookups and simple data.
+
+Choose Document:
+When storing flexible and structured application data.
+
+Choose Column-Family:
+When working with massive distributed datasets.
+
+Choose Graph:
+When relationships between data are the main focus.
+
+
+------------------------------------------------------------
+
+
+8. REAL-WORLD SYSTEM DESIGN EXAMPLES
+------------------------------------
+
+Facebook:
+Graph database for friend relationships.
+
+Amazon:
+Key-value store for caching and sessions.
+
+Netflix:
+Column-family database for analytics.
+
+E-commerce Platforms:
+Document database for product catalogs.
+
+
+------------------------------------------------------------
