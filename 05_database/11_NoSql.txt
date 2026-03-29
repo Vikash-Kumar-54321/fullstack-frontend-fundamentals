@@ -242,3 +242,49 @@ Only two of the three properties can be guaranteed simultaneously.
 
 ------------------------------------------------------------
 
+
+17. CAP COMBINATIONS
+
+CP (Consistency + Partition Tolerance):
+System maintains consistent data but may reject requests.
+
+Example:
+HBase
+
+AP (Availability + Partition Tolerance):
+System always responds but data may temporarily differ.
+
+Example:
+Cassandra, DynamoDB
+
+CA (Consistency + Availability):
+Possible only when there is no network partition.
+
+
+------------------------------------------------------------
+
+
+18. EVENTUAL CONSISTENCY
+Eventual consistency means all replicas will eventually become consistent.
+
+Explanation:
+Updates propagate slowly across nodes but will eventually synchronize.
+
+Example:
+Social media likes updating across different servers.
+
+
+------------------------------------------------------------
+
+
+19. WHY NOSQL WORKS WELL WITH DISTRIBUTED SYSTEMS
+NoSQL databases are designed for distributed environments.
+
+Advantages:
+- Easy horizontal scaling
+- Built-in replication
+- Flexible schema
+- High availability
+
+
+------------------------------------------------------------
