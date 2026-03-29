@@ -1,0 +1,69 @@
+
+1. WHAT IS JSON?
+JSON (JavaScript Object Notation) is a lightweight data format used to store and exchange data.
+
+Explanation:
+JSON is widely used in web applications to send and receive data between client and server. It is language-independent and easy for humans and machines to read.
+
+Structure Example:
+
+{
+  "name": "Vikash",
+  "age": 22,
+  "skills": ["JavaScript", "MongoDB"]
+}
+
+Key Characteristics:
+- Data stored as key-value pairs
+- Keys must be strings
+- Supports arrays and nested objects
+
+Use Cases:
+- API responses
+- Configuration files
+- Data storage in NoSQL databases
+
+
+----------------------------------------------------------
+
+2. WHAT IS BSON?
+BSON (Binary JSON) is a binary representation of JSON used internally by MongoDB.
+
+Explanation:
+MongoDB stores data in BSON format instead of plain JSON because BSON supports additional data types and is optimized for faster storage and retrieval.
+
+Extra Data Types in BSON:
+- Date
+- Binary
+- ObjectId
+- Decimal128
+- Long
+
+Example BSON Structure:
+
+{
+  "_id": ObjectId("6512ab3c4d"),
+  "name": "Vikash",
+  "age": 22
+}
+
+
+----------------------------------------------------------
+
+3. WHAT IS MONGODB?
+MongoDB is a NoSQL document-oriented database that stores data in BSON documents.
+
+Explanation:
+Instead of tables and rows like relational databases, MongoDB stores data in collections and documents.
+
+Structure Comparison:
+
+SQL                 MongoDB
+----------------------------------
+Database            Database
+Table               Collection
+Row                 Document
+Column              Field
+
+
+----------------------------------------------------------
