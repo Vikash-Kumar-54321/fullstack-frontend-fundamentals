@@ -149,3 +149,42 @@ db.users.insertMany([
  {name:"Ravi", age:24}
 ])
 
+
+----------------------------------------------------------
+12. FIND DOCUMENT
+----------------------------------------------------------
+db.users.find()
+
+Explanation:
+Returns all documents in the collection.
+
+Output Example:
+
+{ "_id":1, "name":"Vikash", "age":22 }
+{ "_id":2, "name":"Aman", "age":23 }
+
+
+----------------------------------------------------------
+13. FIND WITH CONDITION
+----------------------------------------------------------
+db.users.find({age:22})
+
+
+----------------------------------------------------------
+14. PROJECTION
+----------------------------------------------------------
+a.  db.users.find({}, {name:1})
+
+Explanation:
+Returns only name field.
+
+b.  db.users.find({}, {name:true,address:true})
+
+Explanation:
+Returns only name and address of each documents
+
+c. db.users.find({}, {name:false})
+
+Explanation:
+Returns all fields except name of each Documents
+
