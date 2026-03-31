@@ -154,3 +154,47 @@ While file loads, server processes another request.
 
 Node.js uses NON-BLOCKING I/O.
 
+
+----------------------------------------------------------
+9. SINGLE THREADED MODEL
+----------------------------------------------------------
+
+Node.js runs on a single main thread.
+
+Explanation:
+Unlike traditional servers that create multiple threads, Node.js handles multiple connections using a single thread with asynchronous operations.
+
+Benefits:
+- Lower memory usage
+- Efficient concurrency
+
+
+----------------------------------------------------------
+10. EVENT LOOP
+----------------------------------------------------------
+
+The event loop is the core mechanism that allows Node.js to perform non-blocking operations.
+
+Definition:
+The event loop continuously checks the call stack and callback queue to execute tasks.
+
+Working:
+
+Call Stack → executes functions
+Callback Queue → stores completed async tasks
+Event Loop → moves tasks to call stack when available
+
+
+----------------------------------------------------------
+11. THREAD POOL
+----------------------------------------------------------
+
+Some operations are handled using worker threads in the thread pool.
+
+Examples:
+- File system operations
+- Cryptography
+- Compression
+
+These operations run in background threads while main thread handles other tasks.
+
