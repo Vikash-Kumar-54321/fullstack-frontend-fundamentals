@@ -335,3 +335,45 @@ Command:
 
 npm list
 
+
+----------------------------------------------------------
+18. WHY NPM IS IMPORTANT FOR FULL STACK
+----------------------------------------------------------
+
+NPM provides access to millions of open-source libraries.
+
+Examples:
+
+express → backend framework
+mongoose → database connection
+cors → cross-origin requests
+dotenv → environment variables
+
+
+----------------------------------------------------------
+19. COMMON INTERVIEW QUESTIONS
+----------------------------------------------------------
+
+Q1: What is package.json?
+
+Answer:
+It is the configuration file that stores metadata and dependencies of a Node.js project.
+
+
+Q2: Difference between dependencies and devDependencies?
+
+dependencies → required for running application
+
+devDependencies → required only for development.
+
+
+Q3: Why do we use package-lock.json?
+
+Answer:
+To ensure consistent dependency versions across environments.
+
+
+Q4: Why node_modules is not pushed to GitHub?
+
+Answer:
+Because it can be recreated using npm install.
