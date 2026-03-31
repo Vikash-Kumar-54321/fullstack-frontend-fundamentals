@@ -1,0 +1,159 @@
+1. WHY ASYNCHRONOUS PROGRAMMING IS IMPORTANT
+----------------------------------------------------------
+
+Node.js uses asynchronous programming to handle many requests efficiently.
+
+Explanation:
+In synchronous systems, tasks execute one after another. If one task takes a long time, the entire system waits.
+
+Example:
+
+read file
+query database
+send response
+
+If reading the file takes 5 seconds, the server cannot process other requests during that time.
+
+Node.js solves this using asynchronous operations.
+
+
+----------------------------------------------------------
+2. CALL STACK
+----------------------------------------------------------
+
+The call stack is a data structure used to track function execution.
+
+Explanation:
+Whenever a function is called, it is pushed onto the call stack. When it finishes execution, it is removed.
+
+Example:
+
+function A()
+function B()
+
+Execution:
+
+Call A → stack
+Call B → stack
+Return B
+Return A
+
+
+----------------------------------------------------------
+3. SYNCHRONOUS EXECUTION
+----------------------------------------------------------
+
+In synchronous execution, tasks execute one by one.
+
+Example:
+
+console.log("Start")
+console.log("Middle")
+console.log("End")
+
+Output:
+
+Start
+Middle
+End
+
+Each statement executes sequentially.
+
+
+----------------------------------------------------------
+4. ASYNCHRONOUS EXECUTION
+----------------------------------------------------------
+
+In asynchronous execution, long operations run in the background.
+
+Example:
+
+console.log("Start")
+
+setTimeout(() => {
+ console.log("Async Task")
+}, 0)
+
+console.log("End")
+
+Output:
+
+Start
+End
+Async Task
+
+Explanation:
+The async task runs after the main code finishes.
+
+
+----------------------------------------------------------
+5. WHAT IS THE EVENT LOOP
+----------------------------------------------------------
+
+The event loop is the mechanism that allows Node.js to perform non-blocking operations.
+
+Definition:
+It continuously checks the call stack and callback queue to decide what code to execute next.
+
+
+Working Model:
+
+Call Stack
+↓
+Node APIs
+↓
+Callback Queue
+↓
+Event Loop
+↓
+Call Stack
+
+
+----------------------------------------------------------
+6. CALLBACK QUEUE
+----------------------------------------------------------
+
+The callback queue stores callbacks from asynchronous operations.
+
+Example:
+
+setTimeout callback
+HTTP request callback
+File read callback
+
+When the call stack becomes empty, the event loop moves callbacks from the queue to the stack.
+
+
+----------------------------------------------------------
+7. MICROTASK QUEUE
+----------------------------------------------------------
+
+The microtask queue stores higher priority asynchronous tasks.
+
+Examples:
+
+Promises (.then)
+process.nextTick
+
+Priority order:
+
+1. Call Stack
+2. Microtask Queue
+3. Callback Queue
+
+
+Example:
+
+console.log("Start")
+
+Promise.resolve().then(()=>{
+ console.log("Promise")
+})
+
+console.log("End")
+
+Output:
+
+Start
+End
+Promise
