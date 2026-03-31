@@ -410,4 +410,3 @@ Operations can be executed across multiple machines while maintaining system cor
 Example:
 
 Data stored across 100 servers but behaves as one database.
-
