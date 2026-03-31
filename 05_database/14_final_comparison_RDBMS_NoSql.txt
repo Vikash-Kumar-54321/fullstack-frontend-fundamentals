@@ -339,3 +339,75 @@ Example:
 
 Social media likes appearing after a short delay.
 
+
+----------------------------------------------------------
+15. DISTRIBUTED SYSTEM OPERATION PROPERTIES
+----------------------------------------------------------
+
+Many distributed databases rely on mathematical properties to handle operations safely.
+
+These properties help ensure correctness across distributed nodes.
+
+
+----------------------------------------------------------
+ASSOCIATIVITY
+----------------------------------------------------------
+
+Definition:
+Grouping of operations does not affect the result.
+
+Example:
+
+(a + b) + c = a + (b + c)
+
+In distributed systems:
+Operations can be grouped differently across nodes but still produce same result.
+
+
+----------------------------------------------------------
+COMMUTATIVITY
+----------------------------------------------------------
+
+Definition:
+Order of operations does not affect the result.
+
+Example:
+
+a + b = b + a
+
+In distributed databases:
+Operations can arrive in different order across nodes but still produce correct result.
+
+
+----------------------------------------------------------
+IDEMPOTENCY
+----------------------------------------------------------
+
+Definition:
+Applying the same operation multiple times produces the same result.
+
+Example:
+
+Setting value to 5 repeatedly.
+
+SET x = 5
+SET x = 5
+SET x = 5
+
+Final value remains 5.
+
+Importance:
+Ensures safety during retries in distributed systems.
+
+
+----------------------------------------------------------
+DISTRIBUTED PROPERTY
+----------------------------------------------------------
+
+Definition:
+Operations can be executed across multiple machines while maintaining system correctness.
+
+Example:
+
+Data stored across 100 servers but behaves as one database.
+
