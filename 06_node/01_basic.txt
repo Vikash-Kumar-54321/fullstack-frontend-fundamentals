@@ -1,0 +1,62 @@
+1. WHAT IS NODE.JS
+
+Node.js is a JavaScript runtime environment used to run JavaScript outside the browser.
+
+Explanation:
+Originally JavaScript was only used in browsers to build frontend applications. Node.js allows developers to use JavaScript on the server side.
+
+This means JavaScript can now be used to build:
+
+- Backend APIs
+- Web servers
+- Real-time applications
+- Microservices
+
+Example:
+A login API built using Node.js receives request from frontend, checks database, and returns response.
+
+
+----------------------------------------------------------
+2. WHY NODE.JS WAS CREATED
+----------------------------------------------------------
+
+Node.js was created to solve scalability and performance issues in traditional server technologies.
+
+Traditional servers:
+Each request creates a new thread.
+
+Problem:
+High memory consumption.
+
+Node.js approach:
+Uses non-blocking asynchronous architecture to handle many requests efficiently.
+
+
+----------------------------------------------------------
+3. WHAT IS A RUNTIME ENVIRONMENT
+----------------------------------------------------------
+
+A runtime environment is a software layer where a program executes.
+
+Explanation:
+Node.js provides everything needed to execute JavaScript outside the browser.
+
+Components include:
+- V8 JavaScript Engine
+- Event Loop
+- APIs
+- Libraries
+
+
+----------------------------------------------------------
+4. V8 ENGINE
+----------------------------------------------------------
+
+V8 is Google's JavaScript engine used by Node.js to execute JavaScript code.
+
+Explanation:
+The V8 engine converts JavaScript code into machine code so the computer can execute it efficiently.
+
+Example:
+JavaScript code → V8 engine → machine code → execution
+
