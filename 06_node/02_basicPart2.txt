@@ -223,3 +223,149 @@ Example:
 
 socket.on("close", ()=>{})
 
+
+----------------------------------------------------------
+13. setTimeout VS setImmediate
+----------------------------------------------------------
+
+Both schedule asynchronous tasks but in different phases.
+
+setTimeout:
+Executed in timers phase.
+
+setImmediate:
+Executed in check phase.
+
+Example:
+
+setTimeout(()=>console.log("timeout"),0)
+setImmediate(()=>console.log("immediate"))
+
+Execution order may vary depending on environment.
+
+
+----------------------------------------------------------
+14. process.nextTick
+----------------------------------------------------------
+
+process.nextTick executes before the event loop continues.
+
+Example:
+
+console.log("Start")
+
+process.nextTick(()=>{
+ console.log("Next Tick")
+})
+
+console.log("End")
+
+Output:
+
+Start
+End
+Next Tick
+
+
+----------------------------------------------------------
+15. PROMISE QUEUE
+----------------------------------------------------------
+
+Promises are handled in the microtask queue.
+
+Example:
+
+Promise.resolve().then(()=>{
+ console.log("Promise executed")
+})
+
+
+----------------------------------------------------------
+16. EXECUTION PRIORITY ORDER
+----------------------------------------------------------
+
+Priority order in Node.js:
+
+1. Call Stack
+2. process.nextTick
+3. Promise Microtask Queue
+4. Callback Queue
+
+
+----------------------------------------------------------
+17. COMPLETE EXECUTION EXAMPLE
+----------------------------------------------------------
+
+Code:
+
+console.log("Start")
+
+setTimeout(()=>{
+ console.log("Timeout")
+},0)
+
+Promise.resolve().then(()=>{
+ console.log("Promise")
+})
+
+console.log("End")
+
+
+Execution:
+
+Start
+End
+Promise
+Timeout
+
+
+Explanation:
+
+Sync code executes first
+Microtasks execute next
+Timers execute last
+
+
+----------------------------------------------------------
+18. COMMON INTERVIEW QUESTIONS
+----------------------------------------------------------
+
+Q1: Why is Node.js fast?
+
+Answer:
+Because it uses non-blocking asynchronous I/O and event-driven architecture.
+
+
+Q2: What is the event loop?
+
+Answer:
+The event loop manages asynchronous operations by moving callbacks from queues to the call stack.
+
+
+Q3: Difference between setTimeout and setImmediate?
+
+Answer:
+They execute in different phases of the event loop.
+
+
+Q4: What is the microtask queue?
+
+Answer:
+A high-priority queue for promises and process.nextTick.
+
+
+----------------------------------------------------------
+19. REAL WORLD BACKEND EXAMPLE
+----------------------------------------------------------
+
+User sends API request
+
+Steps:
+
+Request arrives
+Node server receives request
+Database query executed asynchronously
+Event loop processes other requests
+Database response returned
+Response sent to client
+
