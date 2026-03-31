@@ -232,3 +232,106 @@ Running scripts:
 npm start
 npm run dev
 
+
+----------------------------------------------------------
+11. GLOBAL VS LOCAL INSTALLATION
+----------------------------------------------------------
+
+Local installation:
+
+npm install express
+
+Installed inside project.
+
+
+Global installation:
+
+npm install -g nodemon
+
+Installed globally on system.
+
+
+Check global packages:
+
+npm list -g --depth=0
+
+
+----------------------------------------------------------
+12. SEMANTIC VERSIONING
+----------------------------------------------------------
+
+Node packages follow semantic versioning.
+
+Format:
+
+MAJOR.MINOR.PATCH
+
+Example:
+
+4.18.2
+
+
+Meaning:
+
+MAJOR → breaking changes
+MINOR → new features
+PATCH → bug fixes
+
+
+----------------------------------------------------------
+13. VERSION SYMBOLS
+----------------------------------------------------------
+
+Caret (^)
+
+^4.18.2
+
+Allows updates for minor and patch versions.
+
+
+Tilde (~)
+
+~4.18.2
+
+Allows only patch updates.
+
+
+----------------------------------------------------------
+14. INSTALLING ALL DEPENDENCIES
+----------------------------------------------------------
+
+Command:
+
+npm install
+
+Explanation:
+
+Reads package.json and installs all dependencies.
+
+
+----------------------------------------------------------
+15. UNINSTALL PACKAGE
+----------------------------------------------------------
+
+Command:
+
+npm uninstall express
+
+
+----------------------------------------------------------
+16. UPDATE PACKAGE
+----------------------------------------------------------
+
+Command:
+
+npm update
+
+
+----------------------------------------------------------
+17. CHECK INSTALLED PACKAGES
+----------------------------------------------------------
+
+Command:
+
+npm list
+
