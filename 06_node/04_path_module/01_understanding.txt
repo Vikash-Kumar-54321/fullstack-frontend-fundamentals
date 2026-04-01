@@ -328,3 +328,64 @@ Inside db.js
 
 require("../server")
 
+
+----------------------------------------------------------
+15. __dirname AND __filename
+----------------------------------------------------------
+
+__dirname
+
+Returns the current directory path.
+
+Example
+
+console.log(__dirname)
+
+Output
+
+C:\project
+
+
+__filename
+
+Returns the current file path.
+
+Example
+
+console.log(__filename)
+
+Output
+
+C:\project\server.js
+
+
+----------------------------------------------------------
+16. COMMON INTERVIEW QUESTIONS
+----------------------------------------------------------
+
+Q1: What is the Node.js path module?
+
+Answer:
+The path module is a core Node.js module used to handle and manipulate file paths in a cross-platform way.
+
+
+Q2: Difference between path.join() and path.resolve()?
+
+join:
+Joins path segments.
+
+resolve:
+Converts path into an absolute path.
+
+
+Q3: What does ./ mean?
+
+Answer:
+It represents the current directory.
+
+
+Q4: What does ../ mean?
+
+Answer:
+It represents the parent directory.
+
