@@ -1,0 +1,45 @@
+---------------------------------------------------------
+1. WHAT IS PATH MODULE
+----------------------------------------------------------
+
+The path module is a built-in Node.js module used to work with file and directory paths.
+
+Explanation:
+Different operating systems use different path formats. Windows uses "\" while Linux and macOS use "/". The path module helps create and manipulate file paths in a way that works across all operating systems.
+
+Example Windows Path
+
+D:\nodejs\html\js\app.js
+
+Example Linux Path
+
+/nodejs/html/js/app.js
+
+
+----------------------------------------------------------
+2. IMPORTING PATH MODULE
+----------------------------------------------------------
+
+Since path is a core module, no installation is required.
+
+Example
+
+const path = require("path")
+
+
+----------------------------------------------------------
+3. STRUCTURE OF A FILE PATH
+----------------------------------------------------------
+
+Example path
+
+D:\nodejs\html\js\app.js
+
+Path Components
+
+root : D:\
+dir  : D:\nodejs\html\js
+base : app.js
+name : app
+ext  : .js
+
