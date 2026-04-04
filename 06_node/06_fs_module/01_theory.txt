@@ -136,3 +136,48 @@ fs.unlink("data.txt",(err)=>{
  console.log("File deleted")
 })
 
+
+----------------------------------------------------------
+8. RENAMING A FILE
+----------------------------------------------------------
+
+Definition:
+Renaming changes the name of a file.
+
+Example:
+
+fs.rename("old.txt","new.txt",(err)=>{
+ console.log("File renamed")
+})
+
+
+----------------------------------------------------------
+9. CHECKING FILE EXISTENCE
+----------------------------------------------------------
+
+Example:
+
+fs.existsSync("data.txt")
+
+Output
+
+true or false
+
+
+----------------------------------------------------------
+10. WORKING WITH DIRECTORIES
+----------------------------------------------------------
+
+Creating a directory
+
+fs.mkdir("test",(err)=>{
+ console.log("Directory created")
+})
+
+
+Removing a directory
+
+fs.rmdir("test",(err)=>{
+ console.log("Directory removed")
+})
+
