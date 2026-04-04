@@ -54,6 +54,67 @@ const server = http.createServer((req, res) => {
 
 
     /*
+    ROUTE: QUERY PARAMETERS
+    Example:
+    /search?name=vikash
+    */
+    else if (path === "/search" && req.method === "GET") {
+
+        const name = query.name || "Guest"
+
+        res.statusCode = 200
+        res.setHeader("Content-Type", "text/plain")
+
+        res.end(`Hello ${name}`)
+    }
+
+
+
+    /*
+    ROUTE: URL PARAMETERS
+    Example:
+    /product?id=10
+    */
+    else if (path === "/product" && req.method === "GET") {
+
+        const id = query.id
+
+        res.statusCode = 200
+        res.setHeader("Content-Type", "text/plain")
+
+        res.end(`Product ID: ${id}`)
+    }
+
+
+
+    /*
+    ROUTE: POST REQUEST
+    */
+    else if (path === "/login" && req.method === "POST") {
+
+        let body = ""
+
+        req.on("data", (chunk) => {
+            body += chunk
+        })
+
+        req.on("end", () => {
+
+            console.log("Received POST Data:", body)
+
+            res.statusCode = 200
+            res.setHeader("Content-Type", "application/json")
+
+            res.end(JSON.stringify({
+                message: "Login data received",
+                data: body
+            }))
+        })
+    }
+
+
+
+    /*
     ROUTE: 404 NOT FOUND
     */
     else {
