@@ -1,0 +1,32 @@
+----------------------------------------------------------
+1. WHAT IS THE FILE SYSTEM MODULE
+----------------------------------------------------------
+
+The fs module is a built-in Node.js module used to interact with the file system.
+
+Explanation:
+The file system module allows Node.js applications to perform operations on files and directories such as creating files, reading files, writing data, deleting files, and managing folders.
+
+In simple words:
+The fs module allows a Node.js program to communicate with the operating system's file storage.
+
+
+Common uses of fs module:
+
+Reading files
+Writing files
+Updating files
+Deleting files
+Working with directories
+
+
+----------------------------------------------------------
+2. IMPORTING THE FS MODULE
+----------------------------------------------------------
+
+Since fs is a core module, no installation is required.
+
+Example:
+
+const fs = require("fs")
+

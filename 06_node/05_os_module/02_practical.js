@@ -25,3 +25,5 @@ console.log("\nTemporary Directory:", os.tmpdir())
 
 console.log("\nNetwork Interfaces:")
 console.log(os.networkInterfaces())
+
+console.log("free memory is ",os.freemem)
