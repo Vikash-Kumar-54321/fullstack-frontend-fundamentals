@@ -165,3 +165,48 @@ Setting header in Node:
 
 res.setHeader("Content-Type","application/json")
 
+
+--------------------------------------------------------
+
+7. HTTP STATUS CODES
+
+Status codes tell the client what happened.
+
+Common codes:
+
+200 → OK
+201 → Created
+400 → Bad Request
+401 → Unauthorized
+404 → Not Found
+500 → Internal Server Error
+
+
+Example:
+
+res.statusCode = 404
+res.end("Page not found")
+
+
+--------------------------------------------------------
+
+8. BASIC ROUTING IN NODE
+
+Routing means handling different URLs.
+
+Example:
+
+if(req.url === "/")
+if(req.url === "/about")
+if(req.url === "/users")
+
+
+Example:
+
+if(req.url === "/"){
+   res.end("Home Page")
+}
+else if(req.url === "/about"){
+   res.end("About Page")
+}
+
