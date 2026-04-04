@@ -30,3 +30,65 @@ Example:
 
 const fs = require("fs")
 
+
+----------------------------------------------------------
+3. SYNCHRONOUS VS ASYNCHRONOUS OPERATIONS
+----------------------------------------------------------
+
+Node.js supports two types of file operations.
+
+
+Synchronous Operations
+
+Definition:
+Synchronous operations execute one after another and block the execution of the program until the operation finishes.
+
+Example:
+
+fs.readFileSync()
+
+Problem:
+It blocks the event loop.
+
+
+Asynchronous Operations
+
+Definition:
+Asynchronous operations do not block the execution of the program. They execute in the background and return results using callbacks.
+
+Example:
+
+fs.readFile()
+
+Advantage:
+Non-blocking and faster for servers.
+
+
+----------------------------------------------------------
+4. READING A FILE
+----------------------------------------------------------
+
+Definition:
+Reading a file means retrieving the contents of the file.
+
+
+Asynchronous Method
+
+fs.readFile(path, encoding, callback)
+
+Example:
+
+fs.readFile("data.txt", "utf8", (err, data)=>{
+ console.log(data)
+})
+
+
+Synchronous Method
+
+fs.readFileSync(path, encoding)
+
+Example:
+
+const data = fs.readFileSync("data.txt","utf8")
+console.log(data)
+
