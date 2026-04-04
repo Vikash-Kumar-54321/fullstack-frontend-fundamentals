@@ -252,3 +252,38 @@ req.on("end",()=>{
    console.log(body)
 })
 
+
+--------------------------------------------------------
+
+11. CONTENT TYPES
+
+Content type tells browser what kind of data is returned.
+
+Common types:
+
+text/html
+application/json
+text/plain
+
+
+Example:
+
+res.setHeader("Content-Type","application/json")
+
+
+--------------------------------------------------------
+
+12. SENDING JSON RESPONSE
+
+JSON is commonly used in APIs.
+
+Example:
+
+const data = {
+    name:"Vikash",
+    role:"developer"
+}
+
+res.setHeader("Content-Type","application/json")
+res.end(JSON.stringify(data))
+
