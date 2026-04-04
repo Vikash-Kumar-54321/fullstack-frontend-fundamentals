@@ -92,3 +92,47 @@ Example:
 const data = fs.readFileSync("data.txt","utf8")
 console.log(data)
 
+
+----------------------------------------------------------
+5. WRITING A FILE
+----------------------------------------------------------
+
+Definition:
+Writing a file means creating a new file or replacing its content.
+
+Example:
+
+fs.writeFile("data.txt","Hello Node",(err)=>{
+ console.log("File written")
+})
+
+If the file exists → it overwrites the content.
+
+
+----------------------------------------------------------
+6. APPENDING DATA
+----------------------------------------------------------
+
+Definition:
+Appending means adding new content to an existing file without deleting the old content.
+
+Example:
+
+fs.appendFile("data.txt","New Line",(err)=>{
+ console.log("Data appended")
+})
+
+
+----------------------------------------------------------
+7. DELETING A FILE
+----------------------------------------------------------
+
+Definition:
+Deleting removes a file from the system.
+
+Example:
+
+fs.unlink("data.txt",(err)=>{
+ console.log("File deleted")
+})
+
