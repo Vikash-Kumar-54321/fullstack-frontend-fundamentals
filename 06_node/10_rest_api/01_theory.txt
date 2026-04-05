@@ -215,3 +215,41 @@ GET /products
 
 Browser can cache response.
 
+
+-----------------------------------------------------------
+4. UNIFORM INTERFACE
+-----------------------------------------------------------
+
+Uniform interface means standardized communication.
+
+Rules include:
+
+Resource identification using URI
+
+Use of HTTP methods
+
+Standard response format (usually JSON)
+
+
+-----------------------------------------------------------
+5. LAYERED SYSTEM
+-----------------------------------------------------------
+
+Client should not know whether it is talking
+directly to server or through intermediaries.
+
+Example:
+
+Client → CDN → Load Balancer → API Server
+
+
+-----------------------------------------------------------
+6. CODE ON DEMAND (OPTIONAL)
+-----------------------------------------------------------
+
+Server can send executable code to client.
+
+Example:
+
+JavaScript.
+
