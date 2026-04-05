@@ -1,0 +1,136 @@
+1. WHAT IS A PROTOCOL?
+
+A protocol is a set of rules that defines how data is transmitted
+between two devices over a network.
+
+In simple words:
+
+Protocol = Communication rules between computers.
+
+
+Example:
+
+When your browser loads a website, it follows HTTP protocol rules
+to communicate with the server.
+
+Real-life analogy:
+
+Think of protocol like a language.
+
+If two people speak the same language, they can communicate.
+
+
+Examples of protocols:
+
+HTTP
+HTTPS
+FTP
+SMTP
+TCP
+UDP
+DNS
+
+
+-----------------------------------------------------
+
+2. WHAT IS A PORT?
+
+A port is a logical communication endpoint used by computers
+to identify specific services or applications.
+
+Each server can run multiple services simultaneously.
+Ports help the operating system decide which service
+should receive the incoming request.
+
+
+Example:
+
+Your computer can run:
+
+Web server
+Database server
+Mail server
+
+All at the same time.
+
+Ports help separate them.
+
+
+Example:
+
+Web server → Port 80
+HTTPS server → Port 443
+Database → Port 3306
+
+
+-----------------------------------------------------
+
+3. IP ADDRESS + PORT = COMPLETE ADDRESS
+
+In networking, a service is identified by:
+
+IP Address + Port Number
+
+
+Example:
+
+192.168.1.1:80
+
+
+Explanation:
+
+192.168.1.1 → IP address
+80 → Port number
+
+
+Another example:
+
+localhost:3000
+
+
+Explanation:
+
+localhost → your computer
+3000 → port number where server runs
+
+
+-----------------------------------------------------
+
+4. WHY PORTS ARE NEEDED
+
+Without ports, a computer would not know
+which application should receive the request.
+
+Example:
+
+Your system may run:
+
+Node server
+MySQL
+MongoDB
+Mail service
+
+
+Ports allow the OS to route traffic correctly.
+
+
+Example flow:
+
+Client request arrives at system
+
+OS checks port number
+
+OS sends request to correct application
+
+
+-----------------------------------------------------
+
+5. PORT NUMBER RANGE
+
+Port numbers range from:
+
+0 to 65535
+
+
+They are divided into three categories.
+
