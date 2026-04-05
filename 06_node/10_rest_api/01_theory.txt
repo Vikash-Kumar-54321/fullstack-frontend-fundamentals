@@ -253,3 +253,62 @@ Example:
 
 JavaScript.
 
+
+-----------------------------------------------------------
+
+
+7. HTTP METHODS USED IN REST
+-----------------------------------------------------------
+
+GET
+
+Retrieve data
+
+
+POST
+
+Create new resource
+
+
+PUT
+
+Update entire resource
+
+
+PATCH
+
+Update partial resource
+
+
+DELETE
+
+Remove resource
+
+
+-----------------------------------------------------------
+
+
+8. IDEMPOTENCY (IMPORTANT INTERVIEW QUESTION)
+-----------------------------------------------------------
+
+Idempotent means:
+
+Performing the same request multiple times
+produces the same result.
+
+
+Example:
+
+GET /users
+
+Safe and idempotent.
+
+
+
+DELETE /users/10
+
+Calling multiple times still results in user deleted.
+
+
+POST is NOT idempotent.
+
