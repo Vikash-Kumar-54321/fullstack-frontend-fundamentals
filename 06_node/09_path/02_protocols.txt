@@ -435,3 +435,53 @@ Cipher negotiation
 Authentication
 
 
+
+------------------------------------------------------------
+6. FTP (File Transfer Protocol)
+------------------------------------------------------------
+
+Used for transferring files between client and server.
+
+
+PORTS
+
+21 → Control connection
+
+20 → Data connection
+
+
+
+------------------------------------------------------------
+FTP WORKING
+
+STEP 1
+
+Client connects to server.
+
+
+
+STEP 2
+
+Authentication required.
+
+
+
+STEP 3
+
+Commands sent.
+
+
+
+STEP 4
+
+Files transferred.
+
+
+
+Commands examples
+
+LIST
+UPLOAD
+DOWNLOAD
+
+
