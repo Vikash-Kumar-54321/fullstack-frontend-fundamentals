@@ -211,3 +211,52 @@ Example Node server:
 
 app.listen(3000)
 
+
+-----------------------------------------------------
+
+10. WHAT HAPPENS WHEN YOU VISIT A WEBSITE
+
+Example:
+
+https://google.com
+
+
+Step-by-step flow:
+
+
+STEP 1
+
+Browser checks protocol
+
+HTTPS
+
+
+STEP 2
+
+Browser contacts DNS server
+
+to get IP address of google.com
+
+
+STEP 3
+
+DNS returns IP
+
+Example:
+
+142.250.183.14
+
+
+STEP 4
+
+Browser connects to server
+
+using port 443 (HTTPS port)
+
+
+STEP 5
+
+Server receives request
+
+and sends response.
+
