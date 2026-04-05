@@ -350,3 +350,117 @@ Browser → TCP connection → TLS encryption → Port 443 → Server
 
 HTTPS adds encryption layer.
 
+
+-----------------------------------------------------
+
+14. WHAT IS SOCKET?
+
+Socket = IP Address + Port
+
+
+Example:
+
+192.168.1.5:3000
+
+
+Sockets enable communication between client and server.
+
+
+-----------------------------------------------------
+
+15. WHY NODE SERVERS USE PORT 3000
+
+Port 80 requires administrator privileges.
+
+So developers usually use ports above 1024.
+
+Example:
+
+3000
+5000
+8080
+
+
+Example:
+
+app.listen(3000)
+
+
+-----------------------------------------------------
+
+16. WHAT IS PORT FORWARDING?
+
+Port forwarding allows external devices to connect
+to a specific port on your local machine.
+
+Used in:
+
+gaming servers
+web hosting
+remote access
+
+
+-----------------------------------------------------
+
+17. FIREWALL AND PORTS
+
+Firewalls control which ports can be accessed.
+
+Example:
+
+If port 22 is blocked,
+SSH access will fail.
+
+
+-----------------------------------------------------
+
+18. COMMON INTERVIEW QUESTIONS
+
+
+Q1: What is a port?
+
+Answer:
+
+A port is a logical endpoint used by a computer
+to identify a specific service or application.
+
+
+-----------------------------------------------------
+
+Q2: What is the difference between IP and port?
+
+IP identifies the device.
+
+Port identifies the service running on that device.
+
+
+Example:
+
+192.168.1.1 → computer
+
+192.168.1.1:3000 → Node server running on that computer
+
+
+-----------------------------------------------------
+
+Q3: Why do we use port 3000 in Node.js?
+
+Because ports below 1024 are reserved for system services.
+
+
+-----------------------------------------------------
+
+Q4: What is a socket?
+
+A socket is a combination of IP address and port number
+used for communication between client and server.
+
+
+-----------------------------------------------------
+
+Q5: Difference between TCP and UDP?
+
+TCP is reliable and connection oriented.
+
+UDP is faster but unreliable.
+
