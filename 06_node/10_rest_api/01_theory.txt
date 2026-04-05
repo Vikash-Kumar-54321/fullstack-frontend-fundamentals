@@ -1,0 +1,62 @@
+1. WHAT IS AN API?
+-----------------------------------------------------------
+
+API stands for:
+
+Application Programming Interface
+
+An API is a set of rules that allows two software systems
+to communicate with each other.
+
+Example:
+
+Frontend → requests data → Backend API
+
+Example flow:
+
+React App
+     |
+     | HTTP Request
+     |
+Backend Server (Node / Express)
+     |
+     | Database Query
+     |
+Database
+
+
+Example API:
+
+GET /users
+
+Response:
+
+[
+ {id:1,name:"Vikash"},
+ {id:2,name:"Rahul"}
+]
+
+
+-----------------------------------------------------------
+
+
+2. WHAT IS REST?
+-----------------------------------------------------------
+
+REST stands for:
+
+Representational State Transfer
+
+REST is an architectural style used for designing APIs
+over HTTP.
+
+
+REST was introduced by:
+
+Roy Fielding in 2000
+
+
+Important idea:
+
+REST uses HTTP protocols to manage resources.
+
