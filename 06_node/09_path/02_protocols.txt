@@ -183,3 +183,110 @@ DNS queries
 VoIP calls
 
 
+
+------------------------------------------------------------
+TCP vs UDP
+------------------------------------------------------------
+
+TCP
+
+Reliable
+Connection oriented
+Slow
+
+
+UDP
+
+Fast
+Connectionless
+Unreliable
+
+
+
+------------------------------------------------------------
+3. DNS (Domain Name System)
+------------------------------------------------------------
+
+Layer:
+Application Layer
+
+DNS converts domain names into IP addresses.
+
+
+Example
+
+google.com → 142.250.183.14
+
+
+Computers communicate using IP addresses,
+but humans remember domain names.
+
+
+
+------------------------------------------------------------
+DNS QUERY FLOW
+------------------------------------------------------------
+
+User enters:
+
+google.com
+
+
+STEP 1
+
+Browser checks local cache.
+
+
+
+STEP 2
+
+OS checks DNS cache.
+
+
+
+STEP 3
+
+Request sent to ISP DNS server.
+
+
+
+STEP 4
+
+Recursive DNS queries start.
+
+
+
+ROOT SERVER
+
+Finds TLD server (.com)
+
+
+
+TLD SERVER
+
+Finds authoritative server.
+
+
+
+AUTHORITATIVE SERVER
+
+Returns IP address.
+
+
+
+STEP 5
+
+Browser receives IP and connects to server.
+
+
+
+------------------------------------------------------------
+DNS PORT
+
+53
+
+
+Usually uses UDP
+
+Sometimes TCP for large responses.
+
