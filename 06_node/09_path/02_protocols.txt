@@ -529,3 +529,21 @@ STEP 4
 Email delivered.
 
 
+
+------------------------------------------------------------
+8. POP3 (Post Office Protocol)
+------------------------------------------------------------
+
+Used for retrieving email from server.
+
+
+PORT
+
+110
+
+
+
+FEATURE
+
+Downloads email to local device.
+
