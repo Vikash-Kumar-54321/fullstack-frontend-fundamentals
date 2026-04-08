@@ -50,3 +50,62 @@ Path:
 Query Parameters:
 ?id=10
 
+
+================================================================================
+SECTION 3: BROWSER CACHE CHECK
+================================================================================
+
+Before contacting the network, the browser checks if requested resources
+already exist locally.
+
+Examples of cached resources:
+
+HTML files
+CSS stylesheets
+JavaScript files
+Images
+Fonts
+
+If resources exist in cache and are still valid, the browser loads them
+immediately without contacting the server.
+
+
+================================================================================
+SECTION 4: DNS LOOKUP
+================================================================================
+
+DNS stands for:
+
+Domain Name System
+
+Computers communicate using IP addresses, not domain names.
+
+DNS converts domain names into IP addresses.
+
+Example:
+
+google.com → 142.250.183.206
+
+DNS resolution process:
+
+1. Browser cache check
+2. Operating system cache
+3. Router cache
+4. ISP DNS server
+5. Root DNS server
+6. TLD server
+7. Authoritative DNS server
+
+Full forms:
+
+ISP = Internet Service Provider
+TLD = Top Level Domain
+
+Examples of TLD:
+
+.com
+.org
+.net
+
+The authoritative DNS server returns the IP address of the website.
+
