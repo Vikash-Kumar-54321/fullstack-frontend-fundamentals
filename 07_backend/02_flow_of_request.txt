@@ -109,3 +109,302 @@ Examples of TLD:
 
 The authoritative DNS server returns the IP address of the website.
 
+
+================================================================================
+SECTION 5: TCP CONNECTION ESTABLISHMENT
+================================================================================
+
+TCP stands for:
+
+Transmission Control Protocol
+
+TCP ensures reliable communication between client and server.
+
+It guarantees:
+
+Reliable delivery
+Ordered packets
+Error detection and retransmission
+
+TCP connection is established using the three-way handshake.
+
+Step 1:
+Client sends SYN packet
+
+SYN stands for Synchronize
+
+Step 2:
+Server responds with SYN-ACK
+
+ACK stands for Acknowledgement
+
+Step 3:
+Client sends ACK
+
+After this process, a reliable TCP connection is established.
+
+
+================================================================================
+SECTION 6: TLS HANDSHAKE
+================================================================================
+
+TLS stands for:
+
+Transport Layer Security
+
+TLS provides encrypted communication over the internet.
+
+When HTTP runs over TLS, it becomes HTTPS.
+
+HTTPS stands for:
+
+HyperText Transfer Protocol Secure
+
+TLS provides three major security properties:
+
+1. Confidentiality
+2. Integrity
+3. Authentication
+
+
+Confidentiality
+
+Ensures that attackers cannot read the transmitted data.
+
+Encryption example:
+
+AES
+Advanced Encryption Standard
+
+
+Integrity
+
+Ensures data cannot be modified during transmission.
+
+Achieved using hashing algorithms.
+
+Example:
+
+SHA
+Secure Hash Algorithm
+
+
+Authentication
+
+Ensures the client is communicating with the real server.
+
+Servers prove identity using digital certificates issued by trusted
+Certificate Authorities.
+
+
+Examples of Certificate Authorities:
+
+DigiCert
+Let's Encrypt
+GlobalSign
+
+
+TLS Handshake Steps
+
+1. ClientHello
+2. ServerHello
+3. Server Certificate
+4. Key Exchange
+5. Session Key Generation
+6. Secure Communication
+
+
+ClientHello
+
+Client sends supported TLS version and cipher suites.
+
+
+ServerHello
+
+Server selects encryption algorithm.
+
+
+Server Certificate
+
+Server sends digital certificate containing its public key.
+
+
+Certificate Verification
+
+Browser verifies certificate using trusted certificate authorities. and generate premaster secret using shared keys of the server which then decrypt by only server with its private key
+
+
+Key Exchange
+
+Client and server establish shared secret keys.
+
+
+Session Key Generation
+
+Both sides generate symmetric encryption keys for communication.
+
+
+================================================================================
+SECTION 7: HTTP REQUEST
+================================================================================
+
+HTTP stands for:
+
+HyperText Transfer Protocol
+
+Example request:
+
+GET /products?id=10 HTTP/1.1
+Host: example.com
+User-Agent: Chrome
+
+Common HTTP methods:
+
+GET
+POST
+PUT
+PATCH
+DELETE
+
+
+================================================================================
+SECTION 8: LOAD BALANCER
+================================================================================
+
+Large websites distribute traffic across multiple servers using load
+balancers.
+
+Purpose:
+
+Prevent server overload
+Improve reliability
+Distribute requests evenly
+
+Example architecture:
+
+Client
+   ↓
+Load Balancer
+   ↓
+Server 1
+Server 2
+Server 3
+
+
+================================================================================
+SECTION 9: WEB SERVER AND APPLICATION SERVER
+================================================================================
+
+Web servers handle HTTP requests and serve static content.
+
+Examples:
+
+Nginx
+Apache HTTP Server
+
+
+Application servers execute backend business logic.
+
+Examples:
+
+Node.js
+Django
+Spring Boot
+Ruby on Rails
+
+Typical backend processing flow:
+
+Request
+   ↓
+Router
+   ↓
+Controller
+   ↓
+Service Layer
+   ↓
+Database
+
+
+================================================================================
+SECTION 10: DATABASE PROCESSING
+================================================================================
+
+The application server queries a database to retrieve or store data.
+
+Common databases:
+
+MySQL
+PostgreSQL
+MongoDB
+Redis
+
+Example SQL query:
+
+SELECT * FROM products WHERE id = 10
+
+
+================================================================================
+SECTION 11: SERVER RESPONSE
+================================================================================
+
+The server generates a response based on database results.
+
+Common response formats:
+
+HTML
+JSON
+XML
+
+Example JSON response:
+
+{
+  "id": 10,
+  "name": "Laptop",
+  "price": 900
+}
+
+
+HTTP response example:
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+
+Common status codes:
+
+200 OK
+301 Redirect
+404 Not Found
+500 Server Error
+
+
+================================================================================
+SECTION 12: BROWSER RENDERING PIPELINE
+================================================================================
+
+After receiving HTML, the browser begins rendering.
+
+Steps include:
+
+1. HTML Parsing
+2. DOM Construction
+3. CSS Parsing
+4. CSSOM Construction
+5. Render Tree Creation
+6. Layout Calculation
+7. Painting
+
+
+DOM stands for:
+
+Document Object Model
+
+
+CSSOM stands for:
+
+CSS Object Model
+
+
+JavaScript execution can modify the DOM dynamically and request additional
+data from servers.
+
