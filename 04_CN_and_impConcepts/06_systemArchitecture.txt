@@ -285,3 +285,85 @@ Kubernetes
 Service Discovery
 CI/CD pipelines
 
+
+=========================================================
+5. KEY DIFFERENCE BETWEEN ARCHITECTURES
+=========================================================
+
+Monolithic Architecture
+
+- Single backend application
+- All modules tightly coupled
+- Easier to build initially
+- Harder to scale later
+
+Client-Server Architecture
+
+- Defines communication model
+- Client requests services from server
+- Server processes and responds
+
+Microservices Architecture
+
+- Backend split into multiple independent services
+- Each service handles a specific responsibility
+
+
+=========================================================
+6. IMPORTANT CONCEPT: ARCHITECTURE VS DEPLOYMENT
+=========================================================
+
+Architecture is not defined by where applications are deployed.
+
+Architecture refers to how the system is structured internally.
+
+Example:
+
+Frontend → Vercel
+Backend → AWS
+Database → MongoDB Atlas
+
+Even with separate deployment, if the backend is a single
+application, it is still Monolithic.
+
+Architecture depends on:
+
+How backend services are organized.
+
+
+=========================================================
+7. REAL WORLD ARCHITECTURE EVOLUTION
+=========================================================
+
+Most companies evolve through these stages:
+
+Stage 1
+Monolithic Architecture
+
+Stage 2
+Large Monolith
+
+Stage 3
+Microservices Architecture
+
+Many large companies started with monoliths and later moved
+to microservices as their systems scaled.
+
+
+=========================================================
+8. SUMMARY
+=========================================================
+
+Monolithic Architecture
+→ Single backend application containing all modules.
+
+Client-Server Architecture
+→ Client sends requests to server and receives responses.
+
+Microservices Architecture
+→ Backend split into multiple independent services.
+
+
+=========================================================
+END OF REVISION NOTES
+=========================================================
