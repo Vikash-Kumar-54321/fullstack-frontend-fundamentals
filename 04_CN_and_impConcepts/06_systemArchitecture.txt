@@ -113,3 +113,87 @@ Despite disadvantages, monolithic architecture is ideal for:
 - Small applications
 - Early-stage startups
 - Small development teams
+
+
+
+=========================================================
+3. CLIENT-SERVER ARCHITECTURE
+=========================================================
+
+Definition:
+Client-Server Architecture is a computing model where the system
+is divided into two main components:
+
+1. Client
+2. Server
+
+The client requests services, and the server processes the request
+and sends back a response.
+
+Client Examples:
+
+- Web browser
+- Mobile applications
+- React frontend
+- Desktop applications
+
+Server Examples:
+
+- Node.js backend
+- Django backend
+- Spring Boot backend
+
+The communication between client and server happens through
+network protocols like:
+
+- HTTP
+- HTTPS
+- TCP/IP
+
+Typical Client-Server Flow
+
+Client (Browser / Mobile App)
+        ↓
+HTTP Request
+        ↓
+Backend Server
+        ↓
+Database
+        ↓
+HTTP Response
+        ↓
+Client
+
+Example Deployment
+
+Frontend → Vercel / Netlify
+Backend → AWS / Render / DigitalOcean
+Database → MongoDB Atlas / MySQL Server
+
+Advantages of Client-Server Architecture
+
+1. Clear separation of responsibilities
+Client handles UI
+Server handles business logic
+
+2. Centralized data management
+All data is stored and controlled by the server.
+
+3. Easier updates
+Updating the server automatically updates functionality
+for all clients.
+
+4. Supports multiple clients
+Many clients can connect to one server.
+
+Disadvantages of Client-Server Architecture
+
+1. Server overload
+Large number of clients can overload the server.
+
+2. Single point of failure
+If the server crashes, the entire system stops working.
+
+3. Network dependency
+Client and server communication requires network connectivity.
+
