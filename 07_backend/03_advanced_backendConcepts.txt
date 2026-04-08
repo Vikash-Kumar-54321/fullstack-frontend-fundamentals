@@ -1,0 +1,79 @@
+================================================================================
+ADVANCED BACKEND ARCHITECTURE NOTES
+Routing, Middleware, Controllers, Service Layer, MVC, Validation, Error Handling,
+and API Versioning
+================================================================================
+
+
+INTRODUCTION
+--------------------------------------------------------------------------------
+Modern backend applications are designed using structured architectural
+patterns that make the system maintainable, scalable, and testable. When a
+backend receives a request from a client application such as a browser or a
+mobile app, the request passes through several logical layers before the final
+response is returned.
+
+These layers include routing, middleware processing, controller logic,
+business service execution, database access, validation mechanisms, and error
+handling.
+
+Understanding these concepts deeply is essential for backend engineers because
+they determine how well a system can scale and how easily developers can work
+with large codebases.
+
+The key topics discussed in this document are:
+
+Routing
+Request and Response Objects
+Middleware
+Controller Architecture
+Service Layer
+MVC Architecture
+Validation
+Error Handling
+API Versioning
+
+
+================================================================================
+SECTION 1: ROUTING
+================================================================================
+
+Routing is one of the fundamental mechanisms in backend development. It
+determines which code should execute when a specific request is received by
+the server.
+
+When a client sends an HTTP request to a backend server, the request contains
+two important pieces of information:
+
+1. HTTP Method
+2. URL Path
+
+The server must determine which function should handle the request based on
+these values.
+
+Example request:
+
+GET /users
+
+Here:
+GET is the HTTP method.
+The path is /users.
+
+In backend frameworks like Express, routing is defined using methods such as
+GET, POST, PUT, PATCH, and DELETE.
+
+Example:
+
+app.get("/users", (req, res) => {
+    res.send("User list")
+})
+
+In this example:
+
+Route Path: /users
+HTTP Method: GET
+Handler Function: function(req, res)
+
+When a client sends a request to /users using the GET method, this function
+executes.
+
