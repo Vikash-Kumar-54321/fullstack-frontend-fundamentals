@@ -241,3 +241,84 @@ Example combined usage:
 
 res.status(200).json({message:"success"})
 
+
+================================================================================
+SECTION 4: MIDDLEWARE
+================================================================================
+
+Middleware is one of the most powerful and commonly used features in backend
+frameworks.
+
+Definition:
+
+Middleware is a function that executes during the request-response cycle
+before the final route handler sends the response.
+
+The purpose of middleware is to process the request, perform checks, modify
+data, or execute logic before passing control to the next step.
+
+
+Request Lifecycle with Middleware
+
+Client Request
+      ↓
+Middleware
+      ↓
+Route Handler
+      ↓
+Response
+
+
+Example middleware:
+
+function logger(req, res, next) {
+    console.log("Request received")
+    next()
+}
+
+app.use(logger)
+
+
+The next() function is extremely important. It passes control to the next
+middleware or route handler.
+
+If next() is not called, the request will stop and the client will not receive
+a response.
+
+
+Common Uses of Middleware
+
+Authentication
+
+Checking whether a user is logged in.
+
+
+Logging
+
+Recording request information.
+
+
+Validation
+
+Checking whether request data is valid.
+
+
+Body Parsing
+
+Parsing JSON request bodies.
+
+
+CORS Handling
+
+Allowing cross-origin requests.
+
+
+Example authentication middleware:
+
+function auth(req,res,next){
+    if(req.headers.token){
+        next()
+    }else{
+        res.status(401).send("Unauthorized")
+    }
+}
