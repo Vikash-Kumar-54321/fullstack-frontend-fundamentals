@@ -367,3 +367,32 @@ router.get("/users", getUsers)
 
 Controllers act as the bridge between routes and business logic.
 
+
+================================================================================
+SECTION 6: SERVICE LAYER
+================================================================================
+
+The service layer contains the core business logic of the application.
+
+Instead of placing complex logic in controllers, it is moved into separate
+service modules.
+
+Example:
+
+async function getAllUsers(){
+    return await User.find()
+}
+
+Controllers call service functions, and service functions interact with
+models and databases.
+
+
+Benefits of Service Layer
+
+Improved code organization
+Better testability
+Code reusability
+Separation of concerns
+
+Large enterprise applications rely heavily on service layers.
+
