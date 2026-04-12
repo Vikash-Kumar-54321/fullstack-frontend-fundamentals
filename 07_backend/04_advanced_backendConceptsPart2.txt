@@ -96,3 +96,49 @@ User logs in → Authentication occurs → Server verifies identity
 ↓
 Server checks user permissions → Authorization determines allowed actions
 
+
+================================================================================
+SECTION 2: WHAT HAPPENS WHEN A USER LOGS IN
+================================================================================
+
+When a user logs into a web application, several steps occur between the client
+and the backend server.
+
+The process typically begins when the client sends a login request to the
+server containing user credentials.
+
+Example login request:
+
+POST /login
+
+Body:
+{
+  "email": "user@email.com",
+  "password": "password123"
+}
+
+The backend server receives this request and verifies the credentials by
+checking them against records stored in the database.
+
+If the credentials are valid, the server must create a way to remember the user
+for future requests.
+
+This is necessary because HTTP is a stateless protocol.
+
+
+STATELESS PROTOCOL
+
+A stateless protocol means that each request is independent and the server does
+not automatically remember previous interactions.
+
+Because of this, the server must implement a mechanism to maintain user state.
+
+Two common approaches are used:
+
+Session-based authentication
+Token-based authentication using JWT
+
+Once authentication is successful, the server sends an identifier back to the
+client. The client stores this identifier and sends it with every future
+request so the server can recognize the user.
+
