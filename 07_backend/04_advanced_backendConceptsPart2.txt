@@ -1,0 +1,98 @@
+================================================================================
+BACKEND AUTHENTICATION & SECURITY COMPLETE NOTES
+Authentication, Authorization, Cookies, Sessions, JWT, CORS, XSS, CSRF
+================================================================================
+
+
+INTRODUCTION
+--------------------------------------------------------------------------------
+Modern web applications must securely manage user identity, access control,
+and protection against common web vulnerabilities. When a user interacts with
+a web application, the backend must ensure that the user is properly identified
+and allowed to perform only authorized actions.
+
+This requires several interconnected mechanisms including authentication,
+authorization, session management, token-based authentication, and browser
+security policies.
+
+These concepts are fundamental in backend development and are frequently
+discussed in technical interviews and system design discussions.
+
+The key concepts covered in this document include:
+
+Authentication
+Authorization
+Login Flow
+Cookies
+Sessions
+Session Scaling Problems
+JWT (JSON Web Token)
+JWT Structure
+JWT Authentication Flow
+CORS (Cross-Origin Resource Sharing)
+XSS (Cross-Site Scripting)
+CSRF (Cross-Site Request Forgery)
+
+
+================================================================================
+SECTION 1: AUTHENTICATION VS AUTHORIZATION
+================================================================================
+
+Authentication and Authorization are two closely related but fundamentally
+different concepts in backend systems.
+
+Although they sound similar, they represent different stages of access control.
+
+
+AUTHENTICATION
+
+Authentication refers to the process of verifying the identity of a user.
+
+In simple terms, authentication answers the question:
+
+"Who are you?"
+
+When a user attempts to log into an application, they provide credentials such
+as an email and password. The backend server receives these credentials and
+compares them with the data stored in the database.
+
+If the credentials match the stored data, the server confirms the identity of
+the user. This entire verification process is known as authentication.
+
+Authentication mechanisms can include:
+
+Username and password
+OTP verification
+Biometric authentication
+Social login systems
+
+
+AUTHORIZATION
+
+Authorization occurs after authentication and determines what actions the user
+is allowed to perform.
+
+Authorization answers the question:
+
+"What are you allowed to do?"
+
+After the server confirms the user’s identity, it checks the user’s permissions
+or role within the system.
+
+For example:
+
+An admin user may be allowed to delete accounts or manage system settings.
+
+A regular user may only be allowed to view or edit their own profile.
+
+Therefore:
+
+Authentication verifies identity.
+Authorization determines access permissions.
+
+Typical application flow:
+
+User logs in → Authentication occurs → Server verifies identity
+↓
+Server checks user permissions → Authorization determines allowed actions
+
