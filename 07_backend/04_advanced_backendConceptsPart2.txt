@@ -359,3 +359,38 @@ Secret Key
 
 If someone modifies the payload, the signature verification will fail.
 
+
+================================================================================
+SECTION 8: JWT AUTHENTICATION FLOW
+================================================================================
+
+The JWT authentication process works as follows:
+
+User sends login request
+↓
+Server verifies credentials
+↓
+Server generates JWT
+↓
+Token sent to client
+↓
+Client stores token
+↓
+Client sends token with future requests
+↓
+Server verifies token
+↓
+Access granted
+
+
+JWT tokens are usually sent in the Authorization header.
+
+Example:
+
+Authorization: Bearer <token>
+
+The server extracts the token and verifies it using the secret key.
+
+If verification succeeds, the server decodes the payload and identifies the
+user.
+
