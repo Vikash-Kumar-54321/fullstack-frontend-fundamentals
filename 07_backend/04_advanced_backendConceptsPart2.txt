@@ -142,3 +142,93 @@ Once authentication is successful, the server sends an identifier back to the
 client. The client stores this identifier and sends it with every future
 request so the server can recognize the user.
 
+
+================================================================================
+SECTION 3: COOKIES
+================================================================================
+
+Cookies play a critical role in maintaining state between client and server.
+
+A cookie is a small piece of data that the server sends to the browser. The
+browser stores this data and automatically includes it in future requests to
+the same server.
+
+Cookies are stored inside the browser and are attached to requests
+automatically.
+
+Example server response header:
+
+Set-Cookie: sessionId=abc123
+
+After receiving this response, the browser stores the cookie internally.
+
+When the browser sends another request to the same server, it includes the
+cookie in the request header.
+
+Example request header:
+
+Cookie: sessionId=abc123
+
+This allows the server to recognize the user without requiring the user to log
+in again.
+
+Cookies can store information such as:
+
+Session identifiers
+Authentication tokens
+User preferences
+Tracking information
+
+Cookies are essential for maintaining state in stateless protocols like HTTP.
+
+
+================================================================================
+SECTION 4: SESSIONS
+================================================================================
+
+Sessions are a traditional method of managing authentication on the server
+side.
+
+In session-based authentication, the server stores user information on the
+server after the user logs in.
+
+When a user successfully logs in, the server creates a session object that
+contains information about the user.
+
+The server then generates a unique session identifier called a session ID.
+
+This session ID is sent to the client inside a cookie.
+
+Example:
+
+Set-Cookie: sessionId=abc123
+
+The client stores this session ID and sends it with every request.
+
+When the server receives a request containing the session ID, it looks up the
+corresponding session data stored on the server.
+
+If the session exists and is valid, the server identifies the user and
+processes the request.
+
+
+SESSION AUTHENTICATION FLOW
+
+User logs into application
+↓
+Server verifies credentials
+↓
+Server creates session object
+↓
+Server generates session ID
+↓
+Session ID stored in cookie
+↓
+Client sends cookie with every request
+↓
+Server validates session
+
+
+Sessions are secure and simple but introduce scalability challenges when
+applications grow.
+
