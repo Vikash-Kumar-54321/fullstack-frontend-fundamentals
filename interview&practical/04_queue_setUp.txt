@@ -1,0 +1,302 @@
+QUEUE SYSTEM — PRODUCTION DESIGN + SESSION CONTROL (FAANG LEVEL NOTES)
+
+====================================================================
+SECTION 1: CORE DESIGN PROBLEM (CRITICAL INSIGHT)
+=================================================
+
+Incorrect Assumption:
+Booking = Immediate execution
+
+Why wrong:
+
+* Future bookings exist
+* Doctor may not start yet
+* ETA becomes incorrect
+* No real-world control
+
+Correct Principle:
+Booking ≠ Execution
+
+Interview Insight:
+“Queue creation and execution must be decoupled in time-based systems.”
+
+---
+
+====================================================================
+SECTION 2: STATE SEPARATION (VERY IMPORTANT)
+============================================
+
+We introduced two independent states:
+
+1. SESSION STATE
+
+   * isActive = false → booking phase
+   * isActive = true → execution phase
+
+2. QUEUE STATE
+
+   * waiting
+   * in_progress
+   * completed
+   * skipped
+
+Why this matters:
+
+* Prevents premature execution
+* Enables real-world control
+* Supports future scheduling
+
+Interview Insight:
+“Separating system state avoids invalid transitions and improves system correctness.”
+
+---
+
+====================================================================
+SECTION 3: BOOKING LOGIC (CORRECTED)
+====================================
+
+Rule:
+Every booking → status = "waiting"
+
+NO EXCEPTION
+
+---
+
+Conditional Execution:
+
+IF session.isActive = true:
+→ check if active patient exists
+
+```
+IF none:
+    → assign in_progress
+ELSE:
+    → keep waiting + calculate ETA
+```
+
+IF session.isActive = false:
+→ always waiting
+→ no ETA
+
+---
+
+ETA RULE:
+
+IF session not active:
+ETA = null / not shown
+
+IF session active:
+ETA = dynamic calculation based on queue position
+
+---
+
+Interview Insight:
+“Execution logic should depend on system state, not on event occurrence.”
+
+---
+
+====================================================================
+SECTION 4: SESSION ACTIVATION (CONTROL LAYER)
+=============================================
+
+API:
+PATCH /queue/start-session
+
+Purpose:
+
+* Transition system from booking → execution
+
+---
+
+Service Flow:
+
+1. Find session (doctorId + date)
+2. If not found → reject
+3. If already active → prevent duplicate
+4. Activate session (isActive = true)
+5. Find first patient (FIFO)
+6. Move first → in_progress
+
+---
+
+Key Concept:
+FIFO (First In First Out)
+
+---
+
+Interview Insight:
+“Session activation acts as a control switch that transitions the system into execution mode.”
+
+---
+
+====================================================================
+SECTION 5: QUEUE EXECUTION FLOW
+===============================
+
+Initial:
+All patients → waiting
+
+---
+
+After session start:
+
+First patient → in_progress
+
+---
+
+On complete:
+
+* current → completed
+* next waiting → in_progress
+
+---
+
+On skip:
+
+* current → skipped
+* next waiting → in_progress
+
+---
+
+SYSTEM GUARANTEE:
+
+At any time:
+ONLY ONE patient = in_progress
+
+---
+
+Interview Insight:
+“This ensures consistency and avoids race conditions in queue execution.”
+
+---
+
+====================================================================
+SECTION 6: REAL-TIME BOOKING BEHAVIOR
+=====================================
+
+Case 1: Booking before session
+→ waiting
+→ no ETA
+
+Case 2: Booking after session start
+→ waiting
+→ ETA calculated
+
+Case 3: First booking after session start
+→ becomes in_progress (if no active patient)
+
+---
+
+Interview Insight:
+“System dynamically adapts based on runtime state, not static assumptions.”
+
+---
+
+====================================================================
+SECTION 7: DATA CONSISTENCY & ATOMICITY
+=======================================
+
+Queue number generation:
+
+* Uses atomic increment ($inc)
+
+Why:
+
+* Prevent duplicate queue numbers
+* Handle concurrent requests
+
+---
+
+Session-based grouping:
+
+* Each doctor has daily session
+
+---
+
+Interview Insight:
+“Atomic operations ensure consistency under concurrent load.”
+
+---
+
+====================================================================
+SECTION 8: ERROR HANDLING STRATEGY
+==================================
+
+Cases handled:
+
+* Duplicate booking → reject
+* Invalid doctor → reject
+* Session not found → reject
+* Session already active → guarded
+
+---
+
+Improvement:
+Use status codes instead of generic errors
+
+---
+
+Interview Insight:
+“Errors should represent business logic, not just system failures.”
+
+---
+
+====================================================================
+SECTION 9: TIME-BASED SYSTEM DESIGN (IMPORTANT)
+===============================================
+
+Key Learning:
+
+* Time-sensitive systems must separate:
+  → scheduling (booking)
+  → execution (processing)
+
+---
+
+ETA depends on:
+
+* queue position
+* average processing time
+
+---
+
+Future Improvements:
+
+* Dynamic ETA (ML-based or real-time tracking)
+
+---
+
+Interview Insight:
+“Time-based systems require careful modeling of events vs state.”
+
+---
+
+====================================================================
+SECTION 10: SYSTEM DESIGN TAKEAWAYS (FAANG LEVEL)
+=================================================
+
+You implemented:
+
+* State-driven architecture
+* Event vs execution separation
+* Controlled system activation
+* FIFO queue processing
+* Atomic operations for consistency
+
+---
+
+This system demonstrates:
+
+* Real-world modeling
+* Scalable backend thinking
+* Production-grade queue handling
+
+---
+
+INTERVIEW SUMMARY STATEMENT:
+
+“I designed a queue system where booking and execution are decoupled using session activation. This ensures accurate scheduling, prevents premature execution, and maintains consistency using FIFO and atomic operations.”
+
+====================================================================
+END OF NOTES
+============
