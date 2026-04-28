@@ -1,0 +1,336 @@
+SMART HEALTHCARE SYSTEM — REVISION SHEET (CORE MODULES)
+
+====================================================================
+SECTION 1: DOCTOR INTELLIGENCE (DECISION ENGINE)
+================================================
+
+PROBLEM:
+Users cannot decide which doctor to choose when multiple doctors are available.
+
+WHY:
+Showing a simple list is not useful. Users care about:
+
+* wait time
+* availability
+* quality (rating, experience)
+
+So we need a system that automatically ranks doctors.
+
+HOW:
+We calculate real-time data:
+
+* queueLoad (active patients)
+* estimatedWaitTime (based on queue + avg time)
+* isAvailable (dynamic check)
+
+Then we compute a score and sort doctors.
+
+CODE:
+
+// queue load
+queueLoad = await Queue.countDocuments({
+doctorId: doc._id,
+sessionId: session._id,
+status: { $in: ["waiting", "in_progress"] }
+});
+
+// ETA
+const waitingBefore = Math.max(queueLoad - 1, 0);
+estimatedWaitTime = waitingBefore * avgTime;
+
+// availability
+const isAvailable =
+doc.isAvailable &&
+session &&
+session.isActive &&
+queueLoad < doc.maxQueueLimit;
+
+// scoring
+let score = 0;
+if (isAvailable) score += 20;
+score += Math.max(0, 50 - estimatedWaitTime);
+score += (doc.rating || 0) * 5;
+score += (doc.experienceYears || 0);
+
+// sorting
+enrichedDoctors.sort((a, b) => b.score - a.score);
+
+UNDERSTANDING:
+System automatically pushes best doctor to top based on real-time queue + quality.
+
+---
+
+====================================================================
+SECTION 2: BOOKING UX (USER-FRIENDLY RESPONSE)
+==============================================
+
+PROBLEM:
+Raw queue data like queueNumber is not useful for users.
+
+WHY:
+Users want to know:
+
+* when to go
+* how long to wait
+* what to do next
+
+HOW:
+We transform backend data into structured response:
+
+* position
+* wait time
+* guidance
+
+CODE:
+
+let position = queue.queueNumber;
+
+const waitingBefore = await Queue.countDocuments({
+doctorId,
+sessionId: session._id,
+status: "waiting",
+queueNumber: { $lt: queue.queueNumber }
+});
+
+const avgTime = doctor.avgConsultationTime || 5;
+const estimatedWaitTime = waitingBefore * avgTime;
+
+// guidance
+let guidance = "";
+
+if (!session.isActive) {
+guidance = "Please arrive before session starts.";
+} else if (position === 1) {
+guidance = "You are next. Please proceed to doctor.";
+} else if (position <= 3) {
+guidance = "Please be nearby.";
+} else {
+guidance = "You can arrive later.";
+}
+
+// final response
+return {
+booking: {
+queueId: queue._id,
+queueNumber: queue.queueNumber,
+position,
+status: queue.status
+},
+timing: {
+estimatedWaitTime,
+sessionActive: session.isActive
+},
+guidance,
+message: "Booking confirmed"
+};
+
+UNDERSTANDING:
+Backend is not just storing data — it is guiding user behavior.
+
+---
+
+====================================================================
+SECTION 3: CANCEL BOOKING SYSTEM
+================================
+
+PROBLEM:
+User cancels booking → system must maintain queue integrity.
+
+WHY:
+We cannot change queue numbers (breaks consistency).
+
+HOW:
+We use:
+
+* status = "cancelled"
+* isActive = false
+
+If cancelled user was in_progress → promote next.
+
+CODE:
+
+const queue = await Queue.findOne({
+userId,
+isActive: true
+});
+
+const wasInProgress = queue.status === "in_progress";
+
+queue.status = "cancelled";
+queue.isActive = false;
+queue.cancelledAt = new Date();
+
+await queue.save();
+
+if (wasInProgress) {
+const next = await Queue.findOne({
+doctorId: queue.doctorId,
+sessionId: queue.sessionId,
+status: "waiting"
+}).sort({ queueNumber: 1 });
+
+if (next) {
+next.status = "in_progress";
+next.startedAt = new Date();
+await next.save();
+}
+}
+
+UNDERSTANDING:
+Queue order remains stable. Only states change.
+
+---
+
+====================================================================
+SECTION 4: NOTIFICATION SYSTEM (EVENT-DRIVEN)
+=============================================
+
+PROBLEM:
+Users need updates about queue events.
+
+WHY:
+Without notifications, users don’t know:
+
+* when their turn comes
+* booking status
+* queue progress
+
+HOW:
+We trigger notifications on events:
+
+* booking
+* next patient
+* turn started
+* cancellation
+
+CODE:
+
+await createNotification(
+userId,
+"Booking Confirmed",
+`Your queue number is ${queue.queueNumber}`,
+"booking"
+);
+
+// next patient
+await createNotification(
+next.userId,
+"Your turn started",
+"Please go to doctor now",
+"update"
+);
+
+UNDERSTANDING:
+System events trigger user communication (decoupled design).
+
+---
+
+====================================================================
+SECTION 5: SEARCH SYSTEM (SYMPTOM → DOCTOR)
+===========================================
+
+PROBLEM:
+User doesn’t know which doctor to choose.
+
+WHY:
+Users think in symptoms, not specialization.
+
+HOW:
+
+1. Normalize input
+2. Map symptom → specialization
+3. Use doctor service (ranking)
+
+CODE:
+
+const normalized = input
+.toLowerCase()
+.trim()
+.replace(/\s+/g, "_");
+
+const specializations = symptomMap[normalized];
+
+return await getDoctors({
+specialization: specializations[0]
+});
+
+ADVANCED (FUZZY):
+
+const bestMatch = findBestMatch(normalized);
+
+UNDERSTANDING:
+Search does not directly fetch doctors — it reuses intelligence layer.
+
+---
+
+====================================================================
+SECTION 6: QUEUE HISTORY SYSTEM
+===============================
+
+PROBLEM:
+Users need to track past bookings.
+
+WHY:
+
+* trust
+* transparency
+* analytics
+
+HOW:
+Fetch inactive queues and transform data.
+
+CODE:
+
+const history = await Queue.find({
+userId,
+isActive: false
+})
+.populate("doctorId", "name specialization")
+.sort({ createdAt: -1 });
+
+return history.map(q => {
+
+let outcome = "";
+
+if (q.status === "completed") outcome = "Visited";
+else if (q.status === "cancelled") outcome = "Cancelled";
+else if (q.status === "skipped") outcome = "Missed";
+
+return {
+queueId: q._id,
+doctorName: q.doctorId?.name,
+specialization: q.doctorId?.specialization,
+queueNumber: q.queueNumber,
+status: q.status,
+outcome,
+bookedAt: q.createdAt,
+completedAt: q.completedAt,
+cancelledAt: q.cancelledAt
+};
+});
+
+UNDERSTANDING:
+System data is converted into user-readable history.
+
+---
+
+====================================================================
+FINAL QUICK RECALL (VERY IMPORTANT)
+===================================
+
+Doctor Intelligence → Ranking system
+Booking UX → Structured + guidance
+Cancel System → State-based, no renumber
+Notification → Event-driven
+Search → Mapping + reuse service
+History → User-friendly transformation
+
+---
+
+FINAL INTERVIEW LINE:
+
+“I built a smart healthcare system where users are guided to the best doctor using real-time queue intelligence, and the backend actively assists users through structured responses, event-driven notifications, and state-based queue management.”
+
+====================================================================
+END
+===
